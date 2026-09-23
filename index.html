@@ -59,14 +59,15 @@ section{padding:72px 20px}
 .fact{padding:20px;border-radius:14px;background:#fff;border:1px solid #e4ebf3;text-align:center}
 .fact b{display:block;color:var(--blue);font-size:22px}
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.gallery figure{margin:0}
-.gallery img{width:100%;height:250px;object-fit:cover;border-radius:13px;display:block}
+.gallery figure{margin:0;cursor:pointer}
+.gallery img{width:100%;height:250px;object-fit:cover;border-radius:13px;display:block;transition:transform 0.2s}
+.gallery img:hover{transform:scale(1.02)}
 .gallery figcaption{padding:8px 3px;color:#555;font-size:14px}
 .notice{border-left:5px solid var(--gold);padding:15px 18px;background:#fff;margin:10px 0;border-radius:8px}
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:25px}
 .contact-card{padding:28px;background:var(--cream);border-radius:15px}
 .contact-card a{color:var(--blue);font-weight:700}
-.map-container{margin-top:15px;border-radius:12px;overflow:hidden;border:1px solid #ccc}
+.map-container{margin-top:12px;border-radius:10px;overflow:hidden;border:1px solid #dcdcdc}
 
 /* Floating Actions */
 .floating-actions{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:12px;z-index:999}
@@ -79,6 +80,11 @@ section{padding:72px 20px}
 .inquiry-box{margin-top:35px;background:#fff;padding:25px;border-radius:15px;box-shadow:0 4px 18px rgba(0,0,0,0.06);border:1px solid #dbe4ee}
 .form-group{margin-bottom:12px}
 .form-group input, .form-group select{width:100%;padding:11px;border-radius:8px;border:1px solid #ccc;font-size:15px;font-family:inherit}
+
+/* Image Lightbox Modal */
+.image-modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.85);justify-content:center;align-items:center}
+.image-modal img{max-width:90%;max-height:85%;border-radius:8px}
+.image-modal-close{position:absolute;top:20px;right:30px;color:#fff;font-size:35px;font-weight:bold;cursor:pointer}
 
 footer{background:#0c294b;color:#fff;text-align:center;padding:30px 20px}
 footer strong{color:var(--gold)}
@@ -222,7 +228,7 @@ footer strong{color:var(--gold)}
 <div class="grid">
 <div class="card"><h3>Classes Offered</h3><p>Pre-Nursery से Class 8 तक — परिसर पर प्रदर्शित जानकारी के अनुसार।</p></div>
 <div class="card"><h3>Curriculum</h3><p>English Medium School (CBSE Pattern par aadharit pathyakram).</p></div>
-<div class="card"><h3>Admission Helpdesk</h3><p>Prvesh shulk aur aavashyak dastavezo ki jaankari ke liye call karein:</p><a class="btn" href="tel:9097555827">📞 9097555827</a></div>
+<div class="card"><h3>Admission Helpdesk</h3><p>प्रवेश शुल्क और आवश्यक दस्तावेजों की जानकारी के लिए कॉल करें:</p><a class="btn" href="tel:9097555827">📞 9097555827</a></div>
 </div>
 
 <div class="inquiry-box">
@@ -268,20 +274,26 @@ footer strong{color:var(--gold)}
 <section id="gallery">
 <div class="container">
 <h2 class="section-title">School Gallery</h2>
-<p class="section-sub">विद्यालय की वास्तविक तस्वीरें</p>
+<p class="section-sub">विद्यालय की वास्तविक तस्वीरें (बड़ा देखने के लिए फोटो पर क्लिक करें)</p>
 <div class="gallery">
-<figure><img src="images/hero-school.png" alt="Holy Land Public School campus" loading="lazy"><figcaption>विद्यालय परिसर</figcaption></figure>
-<figure><img src="images/building.jpg" alt="Holy Land Public School building" loading="lazy"><figcaption>विद्यालय भवन</figcaption></figure>
-<figure><img src="images/classroom.jpg" alt="Holy Land Public School classroom" loading="lazy"><figcaption>कक्षा कक्ष</figcaption></figure>
-<figure><img src="images/corridor.jpg" alt="School corridor" loading="lazy"><figcaption>विद्यालय कॉरिडोर</figcaption></figure>
-<figure><img src="images/office.jpg" alt="School office" loading="lazy"><figcaption>कार्यालय</figcaption></figure>
-<figure><img src="images/play-area.jpg" alt="School play area" loading="lazy"><figcaption>खेल/गतिविधि क्षेत्र</figcaption></figure>
-<figure><img src="images/admission-board.jpg" alt="School admission board" loading="lazy"><figcaption>Admission जानकारी</figcaption></figure>
-<figure><img src="images/residential-board.jpg" alt="Residential school information board" loading="lazy"><figcaption>Residential जानकारी</figcaption></figure>
-<figure><img src="images/school-transport.jpg" alt="School transport vehicle" loading="lazy"><figcaption>School transport</figcaption></figure>
+<figure onclick="openModal(this)"><img src="images/hero-school.png" alt="Holy Land Public School campus" loading="lazy"><figcaption>विद्यालय परिसर</figcaption></figure>
+<figure onclick="openModal(this)"><img src="images/building.jpg" alt="Holy Land Public School building" loading="lazy"><figcaption>विद्यालय भवन</figcaption></figure>
+<figure onclick="openModal(this)"><img src="images/classroom.jpg" alt="Holy Land Public School classroom" loading="lazy"><figcaption>कक्षा कक्ष</figcaption></figure>
+<figure onclick="openModal(this)"><img src="images/corridor.jpg" alt="School corridor" loading="lazy"><figcaption>विद्यालय कॉरिडोर</figcaption></figure>
+<figure onclick="openModal(this)"><img src="images/office.jpg" alt="School office" loading="lazy"><figcaption>कार्यालय</figcaption></figure>
+<figure onclick="openModal(this)"><img src="images/play-area.jpg" alt="School play area" loading="lazy"><figcaption>खेल/गतिविधि क्षेत्र</figcaption></figure>
+<figure onclick="openModal(this)"><img src="images/admission-board.jpg" alt="School admission board" loading="lazy"><figcaption>Admission जानकारी</figcaption></figure>
+<figure onclick="openModal(this)"><img src="images/residential-board.jpg" alt="Residential school information board" loading="lazy"><figcaption>Residential जानकारी</figcaption></figure>
+<figure onclick="openModal(this)"><img src="images/school-transport.jpg" alt="School transport vehicle" loading="lazy"><figcaption>School transport</figcaption></figure>
 </div>
 </div>
 </section>
+
+<!-- Lightbox Popup Container -->
+<div id="imageModal" class="image-modal" onclick="closeModal()">
+  <span class="image-modal-close">&times;</span>
+  <img id="modalImg" src="" alt="Full view">
+</div>
 
 <section id="contact" class="light">
 <div class="container">
@@ -298,16 +310,21 @@ footer strong{color:var(--gold)}
 </div>
 <div class="contact-card">
 <h3>📌 Location Map</h3>
-<p>Matar Chowk, Motihari Road, Chhauradano</p>
+<p>Matar Chowk, Motihari Road, Chhauradano, Bihar</p>
 <div class="map-container">
   <iframe 
-    src="https://maps.google.com/maps?q=Matar+Chowk+Motihari+Road+Chhauradano+Bihar&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+    src="https://maps.google.com/maps?q=Holy+Land+Public+School+Chhauradano+Bihar&t=&z=15&ie=UTF8&iwloc=&output=embed" 
     width="100%" 
     height="240" 
-    style="border:0;" 
+    style="border:0; display:block;" 
     allowfullscreen="" 
     loading="lazy">
   </iframe>
+</div>
+<div style="margin-top:14px;">
+  <a class="btn" href="https://maps.app.goo.gl/mAdDjm5gc8H9Tiwp7" target="_blank" rel="noopener" style="display:inline-block; font-size:14px; padding:10px 16px;">
+    📍 Open Exact Location in Google Maps
+  </a>
 </div>
 </div>
 </div>
@@ -348,6 +365,16 @@ function handleInquiry(e) {
   
   const msg = `*New Admission Inquiry - Holy Land Public School*\n\n*Parent Name:* ${parent}\n*Student Name:* ${student}\n*Phone:* ${phone}\n*Class:* ${selectedClass}`;
   window.open(`https://wa.me/919097555827?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+function openModal(el) {
+  const imgSrc = el.querySelector('img').src;
+  document.getElementById('modalImg').src = imgSrc;
+  document.getElementById('imageModal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('imageModal').style.display = 'none';
 }
 </script>
 </body>
