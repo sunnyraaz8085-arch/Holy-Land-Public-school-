@@ -29,13 +29,19 @@ nav{display:flex;gap:17px;align-items:center}
 nav a{font-weight:700;color:var(--blue);font-size:15px}
 nav a:hover{color:#c58a00}
 .menu-toggle{display:none;background:none;border:0;color:var(--blue);font-size:29px;cursor:pointer}
+
+/* Announcement Bar */
+.ticker-wrap{background:#fff3cd;color:#856404;padding:8px 0;overflow:hidden;border-bottom:1px solid #ffeeba;font-size:14px;font-weight:bold}
+.ticker{display:inline-block;white-space:nowrap;padding-left:100%;animation:marquee 25s linear infinite}
+@keyframes marquee{0%{transform:translate(0, 0)}100%{transform:translate(-100%, 0)}}
+
 .hero{min-height:600px;display:grid;place-items:center;text-align:center;color:#fff;padding:65px 20px;background:linear-gradient(120deg,#123b6deF,#123b6dcc),url("images/hero-school.png") center/cover}
 .hero-content{max-width:900px}
 .badge{display:inline-block;background:#ffffff1f;border:1px solid #fff8;border-radius:999px;padding:7px 15px;margin-bottom:18px}
 .hero h1{font-size:clamp(35px,6vw,68px);line-height:1.05;margin-bottom:12px}
 .hero h2{font-size:clamp(20px,3vw,31px);font-weight:500}
 .hero p{margin:20px auto;max-width:760px;font-size:19px}
-.btn{display:inline-block;background:var(--gold);color:#17202a;padding:12px 21px;border-radius:9px;font-weight:800;margin:6px}
+.btn{display:inline-block;background:var(--gold);color:#17202a;padding:12px 21px;border-radius:9px;font-weight:800;margin:6px;cursor:pointer;border:none}
 .btn.alt{background:#fff;color:var(--blue)}
 section{padding:72px 20px}
 .container{max-width:1120px;margin:auto}
@@ -60,10 +66,24 @@ section{padding:72px 20px}
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:25px}
 .contact-card{padding:28px;background:var(--cream);border-radius:15px}
 .contact-card a{color:var(--blue);font-weight:700}
-.map-btn{margin-top:14px}
+.map-container{margin-top:15px;border-radius:12px;overflow:hidden;border:1px solid #ccc}
+
+/* Floating Actions */
+.floating-actions{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:12px;z-index:999}
+.float-btn{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:transform 0.2s}
+.float-btn:hover{transform:scale(1.1)}
+.float-wa{background:#25d366}
+.float-call{background:#123b6d}
+
+/* Inquiry Form */
+.inquiry-box{margin-top:35px;background:#fff;padding:25px;border-radius:15px;box-shadow:0 4px 18px rgba(0,0,0,0.06);border:1px solid #dbe4ee}
+.form-group{margin-bottom:12px}
+.form-group input, .form-group select{width:100%;padding:11px;border-radius:8px;border:1px solid #ccc;font-size:15px;font-family:inherit}
+
 footer{background:#0c294b;color:#fff;text-align:center;padding:30px 20px}
 footer strong{color:var(--gold)}
 .small{font-size:13px;color:#777}
+
 @media(max-width:850px){
  nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;padding:14px 20px;box-shadow:0 10px 20px #0002;flex-direction:column;align-items:flex-start}
  nav.open{display:flex}
@@ -101,6 +121,10 @@ footer strong{color:var(--gold)}
 <body>
 <div class="top">📞 <a href="tel:9097555827">9097555827</a> &nbsp; | &nbsp; <a href="tel:8789984322">8789984322</a> &nbsp; | &nbsp; 📍 Chhauradano, Bihar</div>
 
+<div class="ticker-wrap">
+  <div class="ticker">📢 Admission Open for Academic Session 2026–27 (Pre-Nursery to Class 8) • Hostel / Residential Facility Available • For Details Call: 9097555827</div>
+</div>
+
 <header>
 <div class="nav">
 <a href="#home" class="logo">
@@ -111,6 +135,7 @@ footer strong{color:var(--gold)}
 <nav>
 <a href="#home">Home</a>
 <a href="#about">About</a>
+<a href="#facilities">Facilities</a>
 <a href="#principal">Principal</a>
 <a href="#admission">Admission</a>
 <a href="#gallery">Gallery</a>
@@ -162,7 +187,22 @@ footer strong{color:var(--gold)}
 </div>
 </section>
 
-<section id="principal">
+<section id="facilities">
+<div class="container">
+<h2 class="section-title">Campus & Facilities</h2>
+<p class="section-sub">विद्यालय परिसर एवं उपलब्ध सुविधाएँ</p>
+<div class="grid">
+<div class="card"><h3>🏫 Peaceful Campus</h3><p>शांत और सुरक्षित वातावरण में अध्ययन के लिए अनुकूल भवन।</p></div>
+<div class="card"><h3>📚 Spacious Classrooms</h3><p>हवादार और प्रकाशयुक्त कक्षाएँ ताकि बच्चों की पढ़ाई बेहतर हो सके।</p></div>
+<div class="card"><h3>🏠 Residential / Hostel</h3><p>दूर-दराज के छात्रों के लिए सुरक्षित एवं अनुशासित छात्रावास सुविधा।</p></div>
+<div class="card"><h3>🚌 Transport Facility</h3><p>आस-पास के क्षेत्रों से बच्चों के आवागमन हेतु स्कूल वाहन की सुविधा।</p></div>
+<div class="card"><h3>🎯 Play Area & Sports</h3><p>बच्चों के शारीरिक विकास हेतु खेलकूद और एक्टिविटी स्पेस।</p></div>
+<div class="card"><h3>👨‍🏫 Dedicated Faculty</h3><p>अनुभवी और समर्पित शिक्षकों द्वारा व्यक्तिगत मार्गदर्शन।</p></div>
+</div>
+</div>
+</section>
+
+<section id="principal" class="light">
 <div class="container">
 <h2 class="section-title">Principal's Message</h2>
 <p class="section-sub">प्रधानाचार्य का संदेश</p>
@@ -175,26 +215,42 @@ footer strong{color:var(--gold)}
 </div>
 </section>
 
-<section class="light">
-<div class="container">
-<h2 class="section-title">Our Campus</h2>
-<p class="section-sub">विद्यालय परिसर की झलक</p>
-<div class="grid">
-<div class="card"><h3>🏫 School Building</h3><p>विद्यालय भवन की वास्तविक तस्वीरें।</p></div>
-<div class="card"><h3>📚 Classrooms</h3><p>कक्षा कक्ष और अध्ययन वातावरण की झलक।</p></div>
-<div class="card"><h3>🏠 Residential Facility</h3><p>विद्यालय के प्रदर्शित विवरण में Residential/Hostel सुविधा का उल्लेख है।</p></div>
-</div>
-</div>
-</section>
-
 <section id="admission">
 <div class="container">
 <h2 class="section-title">Admission / प्रवेश</h2>
-<p class="section-sub">प्रवेश संबंधी जानकारी</p>
+<p class="section-sub">प्रवेश संबंधी जानकारी एवं ऑनलाइन फॉर्म</p>
 <div class="grid">
-<div class="card"><h3>Classes</h3><p>Pre-Nursery से Class 8 तक — परिसर पर प्रदर्शित जानकारी के अनुसार।</p></div>
-<div class="card"><h3>English Medium</h3><p>विद्यालय के बोर्ड पर English Medium School (C.B.S.E Pattern) लिखा है।</p></div>
-<div class="card"><h3>Enquiry</h3><p>प्रवेश की तिथि, शुल्क और आवश्यक दस्तावेजों के लिए स्कूल कार्यालय से संपर्क करें।</p><a class="btn" href="tel:9097555827">📞 Call Now</a></div>
+<div class="card"><h3>Classes Offered</h3><p>Pre-Nursery से Class 8 तक — परिसर पर प्रदर्शित जानकारी के अनुसार।</p></div>
+<div class="card"><h3>Curriculum</h3><p>English Medium School (CBSE Pattern par aadharit pathyakram).</p></div>
+<div class="card"><h3>Admission Helpdesk</h3><p>Prvesh shulk aur aavashyak dastavezo ki jaankari ke liye call karein:</p><a class="btn" href="tel:9097555827">📞 9097555827</a></div>
+</div>
+
+<div class="inquiry-box">
+  <h3 style="color:var(--blue); margin-bottom:15px; text-align:center;">📝 Quick Admission Inquiry Form</h3>
+  <form onsubmit="handleInquiry(event)">
+    <div class="form-group">
+      <input type="text" id="pName" placeholder="Parent / Guardian Name (अभिभावक का नाम)" required>
+    </div>
+    <div class="form-group">
+      <input type="text" id="sName" placeholder="Student Name (छात्र/छात्रा का नाम)" required>
+    </div>
+    <div class="form-group">
+      <input type="tel" id="pPhone" placeholder="Mobile Number (मोबाइल नंबर)" pattern="[0-9]{10}" required>
+    </div>
+    <div class="form-group">
+      <select id="pClass" required>
+        <option value="">-- Select Class for Admission --</option>
+        <option value="Pre-Nursery / Nursery">Pre-Nursery / Nursery</option>
+        <option value="LKG / UKG">LKG / UKG</option>
+        <option value="Class 1 to 5">Class 1 to 5</option>
+        <option value="Class 6 to 8">Class 6 to 8</option>
+        <option value="Hostel / Residential Admission">Hostel / Residential Admission</option>
+      </select>
+    </div>
+    <div style="text-align:center; margin-top:15px;">
+      <button type="submit" class="btn">Send Inquiry via WhatsApp 💬</button>
+    </div>
+  </form>
 </div>
 </div>
 </section>
@@ -203,8 +259,9 @@ footer strong{color:var(--gold)}
 <div class="container">
 <h2 class="section-title">Notice Board</h2>
 <p class="section-sub">सूचना पट्ट</p>
-<div class="notice">📢 <strong>Admission Enquiry:</strong> प्रवेश संबंधी नवीनतम जानकारी के लिए स्कूल कार्यालय से संपर्क करें।</div>
-<div class="notice">📢 <strong>Important:</strong> वेबसाइट पर नई सूचना, परीक्षा तिथि, छुट्टी या admission update समय-समय पर यहाँ जोड़ें।</div>
+<div class="notice">📢 <strong>Admission Open:</strong> शैक्षणिक सत्र 2026–27 के लिए नए नामांकन प्रारंभ हैं। संपर्क कार्यालय खुला है।</div>
+<div class="notice">📢 <strong>Hostel Facility:</strong> बाहर के विद्यार्थियों के लिए छात्रावास में सीमित सीटें उपलब्ध हैं।</div>
+<div class="notice">📢 <strong>Office Timing:</strong> स्कूल कार्यालय में किसी भी कार्य हेतु सुबह 9:00 बजे से दोपहर 2:00 बजे तक संपर्क करें।</div>
 </div>
 </section>
 
@@ -233,20 +290,35 @@ footer strong{color:var(--gold)}
 <div class="contact">
 <div class="contact-card">
 <h3>📍 School Address</h3>
-<p>Matar Chowk, Motihari Road, Chhauradano, Bihar</p><br>
-<h3>📞 Phone</h3>
+<p>Matar Chowk, Motihari Road, Chhauradano, Bihar - 845302</p><br>
+<h3>📞 Phone Helpline</h3>
 <p><a href="tel:9097555827">9097555827</a><br><a href="tel:8789984322">8789984322</a></p>
 <br>
-<a class="btn" href="https://wa.me/919097555827?text=Hello%20Holy%20Land%20Public%20School%2C%20I%20want%20admission%20information." target="_blank" rel="noopener">💬 WhatsApp</a>
+<a class="btn" href="https://wa.me/919097555827?text=Namaste%20Holy%20Land%20Public%20School%2C%20mujhe%20admission%20ki%20jaankari%20chahiye." target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
 </div>
 <div class="contact-card">
-<h3>📌 Location</h3>
+<h3>📌 Location Map</h3>
 <p>Matar Chowk, Motihari Road, Chhauradano</p>
-<a class="btn map-btn" href="https://www.google.com/maps/search/?api=1&query=Matar+Chowk+Motihari+Road+Chhauradano+Bihar" target="_blank" rel="noopener">📍 Open in Google Maps</a>
+<div class="map-container">
+  <iframe 
+    src="https://maps.google.com/maps?q=Matar+Chowk+Motihari+Road+Chhauradano+Bihar&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+    width="100%" 
+    height="240" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+  </iframe>
+</div>
 </div>
 </div>
 </div>
 </section>
+
+<!-- Floating WhatsApp & Call Buttons -->
+<div class="floating-actions">
+  <a href="https://wa.me/919097555827?text=Namaste%20Holy%20Land%20Public%20School%2C%20mujhe%20admission%20ki%20jaankari%20chahiye." class="float-btn float-wa" target="_blank" title="WhatsApp Chat" rel="noopener">💬</a>
+  <a href="tel:9097555827" class="float-btn float-call" title="Call School">📞</a>
+</div>
 
 <footer>
 <p><strong>HOLY LAND PUBLIC SCHOOL</strong></p>
@@ -266,6 +338,17 @@ document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () =
   nav.classList.remove('open');
   menu.setAttribute('aria-expanded','false');
 }));
+
+function handleInquiry(e) {
+  e.preventDefault();
+  const parent = document.getElementById('pName').value.trim();
+  const student = document.getElementById('sName').value.trim();
+  const phone = document.getElementById('pPhone').value.trim();
+  const selectedClass = document.getElementById('pClass').value;
+  
+  const msg = `*New Admission Inquiry - Holy Land Public School*\n\n*Parent Name:* ${parent}\n*Student Name:* ${student}\n*Phone:* ${phone}\n*Class:* ${selectedClass}`;
+  window.open(`https://wa.me/919097555827?text=${encodeURIComponent(msg)}`, '_blank');
+}
 </script>
 </body>
 </html>
