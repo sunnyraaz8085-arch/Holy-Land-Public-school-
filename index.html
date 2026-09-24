@@ -7,11 +7,16 @@
 <meta name="description" content="Holy Land Public School, Matar Chowk, Motihari Road, Chhauradano, Bihar. English medium school with Pre-Nursery to Class 8 and residential/hostel facilities.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://sunnyraaz8085-arch.github.io/Holy-Land-Public-school-/">
+<link rel="icon" type="image/jpeg" href="images/school-logo.jpg">
 <meta name="theme-color" content="#123b6d">
+
+<!-- Social / WhatsApp Preview Cards -->
 <meta property="og:title" content="Holy Land Public School | Chhauradano, Bihar">
-<meta property="og:description" content="English medium school, Pre-Nursery to Class 8, with residential/hostel facilities.">
+<meta property="og:description" content="English medium school, Pre-Nursery to Class 8, with residential/hostel facilities. Admission Open for 2026–27.">
+<meta property="og:image" content="https://sunnyraaz8085-arch.github.io/Holy-Land-Public-school-/images/hero-school.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sunnyraaz8085-arch.github.io/Holy-Land-Public-school-/">
+<meta name="twitter:card" content="summary_large_image">
 
 <style>
 :root{--blue:#123b6d;--blue2:#205d98;--gold:#f4b41a;--cream:#f6f8fb;--ink:#17202a;--white:#fff}
@@ -20,7 +25,7 @@ html{scroll-behavior:smooth}
 body{font-family:Arial,"Noto Sans Devanagari",sans-serif;color:var(--ink);line-height:1.65;background:#fff}
 a{text-decoration:none;color:inherit}
 .top{background:var(--blue);color:#fff;text-align:center;padding:9px 12px;font-size:14px}
-header{background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 14px #0002}
+header{background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 14px rgba(0,0,0,0.1)}
 .nav{max-width:1150px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;position:relative}
 .logo{display:flex;align-items:center;gap:10px;color:var(--blue);font-weight:800}
 .logo img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
@@ -35,7 +40,7 @@ nav a:hover{color:#c58a00}
 .ticker{display:inline-block;white-space:nowrap;padding-left:100%;animation:marquee 25s linear infinite}
 @keyframes marquee{0%{transform:translate(0, 0)}100%{transform:translate(-100%, 0)}}
 
-.hero{min-height:600px;display:grid;place-items:center;text-align:center;color:#fff;padding:65px 20px;background:linear-gradient(120deg,#123b6deF,#123b6dcc),url("images/hero-school.png") center/cover}
+.hero{min-height:600px;display:grid;place-items:center;text-align:center;color:#fff;padding:65px 20px;background:linear-gradient(120deg,rgba(18,59,109,0.92),rgba(18,59,109,0.8)),url("images/hero-school.png") center/cover}
 .hero-content{max-width:900px}
 .badge{display:inline-block;background:#ffffff1f;border:1px solid #fff8;border-radius:999px;padding:7px 15px;margin-bottom:18px}
 .hero h1{font-size:clamp(35px,6vw,68px);line-height:1.05;margin-bottom:12px}
@@ -48,7 +53,7 @@ section{padding:72px 20px}
 .section-title{text-align:center;color:var(--blue);font-size:34px;margin-bottom:6px}
 .section-sub{text-align:center;color:#666;margin-bottom:36px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:#fff;border-radius:15px;padding:24px;box-shadow:0 5px 24px #123b6d18;border:1px solid #e8eef5}
+.card{background:#fff;border-radius:15px;padding:24px;box-shadow:0 5px 24px rgba(18,59,109,0.08);border:1px solid #e8eef5}
 .card h3{color:var(--blue);margin-bottom:7px}
 .light{background:var(--cream)}
 .about{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
@@ -59,9 +64,10 @@ section{padding:72px 20px}
 .fact{padding:20px;border-radius:14px;background:#fff;border:1px solid #e4ebf3;text-align:center}
 .fact b{display:block;color:var(--blue);font-size:22px}
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.gallery figure{margin:0;cursor:pointer}
+.gallery figure{margin:0;cursor:pointer;outline:none}
+.gallery figure:focus-visible{outline:3px solid var(--gold);border-radius:13px}
 .gallery img{width:100%;height:250px;object-fit:cover;border-radius:13px;display:block;transition:transform 0.2s}
-.gallery img:hover{transform:scale(1.02)}
+.gallery figure:hover img{transform:scale(1.02)}
 .gallery figcaption{padding:8px 3px;color:#555;font-size:14px}
 .notice{border-left:5px solid var(--gold);padding:15px 18px;background:#fff;margin:10px 0;border-radius:8px}
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:25px}
@@ -88,10 +94,9 @@ section{padding:72px 20px}
 
 footer{background:#0c294b;color:#fff;text-align:center;padding:30px 20px}
 footer strong{color:var(--gold)}
-.small{font-size:13px;color:#777}
 
 @media(max-width:850px){
- nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;padding:14px 20px;box-shadow:0 10px 20px #0002;flex-direction:column;align-items:flex-start}
+ nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;padding:14px 20px;box-shadow:0 10px 20px rgba(0,0,0,0.15);flex-direction:column;align-items:flex-start}
  nav.open{display:flex}
  .menu-toggle{display:block}
  .grid,.about,.contact{grid-template-columns:1fr}
@@ -184,9 +189,7 @@ footer strong{color:var(--gold)}
 <h3>HOLY LAND PUBLIC SCHOOL</h3>
 <p>HOLY LAND PUBLIC SCHOOL विद्यार्थियों को गुणवत्तापूर्ण शिक्षा, अनुशासन, अच्छे संस्कार और आत्मविश्वास के साथ आगे बढ़ने के लिए प्रेरित करने के उद्देश्य से समर्पित है।</p>
 <br>
-<p>यह विद्यालय English Medium में Pre-Nursery से Class 8 तक की शिक्षा प्रदान करने की जानकारी अपने परिसर के प्रदर्शित विवरण में देता है। विद्यालय के प्रदर्शित विवरण में Residential/Hostel सुविधा का भी उल्लेख है।</p>
-<br>
-<p class="small">नोट: वेबसाइट पर वही सुविधाएँ और दावे रखें जिन्हें विद्यालय आधिकारिक रूप से सत्यापित करता है।</p>
+<p>यह विद्यालय English Medium में Pre-Nursery से Class 8 तक की शिक्षा प्रदान करता है। विद्यालय में दूर-दराज के छात्रों के लिए सुरक्षित और अनुशासित Residential/Hostel सुविधा भी उपलब्ध है।</p>
 </div>
 <img src="images/school-front.jpg" alt="Holy Land Public School building" loading="lazy">
 </div>
@@ -226,8 +229,8 @@ footer strong{color:var(--gold)}
 <h2 class="section-title">Admission / प्रवेश</h2>
 <p class="section-sub">प्रवेश संबंधी जानकारी एवं ऑनलाइन फॉर्म</p>
 <div class="grid">
-<div class="card"><h3>Classes Offered</h3><p>Pre-Nursery से Class 8 तक — परिसर पर प्रदर्शित जानकारी के अनुसार।</p></div>
-<div class="card"><h3>Curriculum</h3><p>English Medium School (CBSE Pattern par aadharit pathyakram).</p></div>
+<div class="card"><h3>Classes Offered</h3><p>Pre-Nursery से Class 8 तक के छात्रों के लिए नामांकन उपलब्ध।</p></div>
+<div class="card"><h3>Curriculum</h3><p>English Medium School (CBSE Pattern पर आधारित पाठ्यक्रम)।</p></div>
 <div class="card"><h3>Admission Helpdesk</h3><p>प्रवेश शुल्क और आवश्यक दस्तावेजों की जानकारी के लिए कॉल करें:</p><a class="btn" href="tel:9097555827">📞 9097555827</a></div>
 </div>
 
@@ -235,16 +238,16 @@ footer strong{color:var(--gold)}
   <h3 style="color:var(--blue); margin-bottom:15px; text-align:center;">📝 Quick Admission Inquiry Form</h3>
   <form onsubmit="handleInquiry(event)">
     <div class="form-group">
-      <input type="text" id="pName" placeholder="Parent / Guardian Name (अभिभावक का नाम)" required>
+      <input type="text" id="pName" placeholder="Parent / Guardian Name (अभिभावक का नाम)" required aria-label="अभिभावक का नाम">
     </div>
     <div class="form-group">
-      <input type="text" id="sName" placeholder="Student Name (छात्र/छात्रा का नाम)" required>
+      <input type="text" id="sName" placeholder="Student Name (छात्र/छात्रा का नाम)" required aria-label="छात्र/छात्रा का नाम">
     </div>
     <div class="form-group">
-      <input type="tel" id="pPhone" placeholder="Mobile Number (मोबाइल नंबर)" pattern="[0-9]{10}" required>
+      <input type="tel" id="pPhone" placeholder="Mobile Number (10 डिजिट मोबाइल नंबर)" pattern="[6-9][0-9]{9}" maxlength="10" title="कृपया 10 अंकों का वैध भारतीय मोबाइल नंबर दर्ज करें" required aria-label="मोबाइल नंबर">
     </div>
     <div class="form-group">
-      <select id="pClass" required>
+      <select id="pClass" required aria-label="कक्षा चुनें">
         <option value="">-- Select Class for Admission --</option>
         <option value="Pre-Nursery / Nursery">Pre-Nursery / Nursery</option>
         <option value="LKG / UKG">LKG / UKG</option>
@@ -276,23 +279,23 @@ footer strong{color:var(--gold)}
 <h2 class="section-title">School Gallery</h2>
 <p class="section-sub">विद्यालय की वास्तविक तस्वीरें (बड़ा देखने के लिए फोटो पर क्लिक करें)</p>
 <div class="gallery">
-<figure onclick="openModal(this)"><img src="images/hero-school.png" alt="Holy Land Public School campus" loading="lazy"><figcaption>विद्यालय परिसर</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/building.jpg" alt="Holy Land Public School building" loading="lazy"><figcaption>विद्यालय भवन</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/classroom.jpg" alt="Holy Land Public School classroom" loading="lazy"><figcaption>कक्षा कक्ष</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/corridor.jpg" alt="School corridor" loading="lazy"><figcaption>विद्यालय कॉरिडोर</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/office.jpg" alt="School office" loading="lazy"><figcaption>कार्यालय</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/play-area.jpg" alt="School play area" loading="lazy"><figcaption>खेल/गतिविधि क्षेत्र</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/admission-board.jpg" alt="School admission board" loading="lazy"><figcaption>Admission जानकारी</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/residential-board.jpg" alt="Residential school information board" loading="lazy"><figcaption>Residential जानकारी</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/school-transport.jpg" alt="School transport vehicle" loading="lazy"><figcaption>School transport</figcaption></figure>
+<figure tabindex="0" role="button" onclick="openModal(this)" onkeydown="checkKey(event, this)"><img src="images/hero-school.png" alt="Holy Land Public School campus" loading="lazy"><figcaption>विद्यालय परिसर</figcaption></figure>
+<figure tabindex="0" role="button" onclick="openModal(this)" onkeydown="checkKey(event, this)"><img src="images/building.jpg" alt="Holy Land Public School building" loading="lazy"><figcaption>विद्यालय भवन</figcaption></figure>
+<figure tabindex="0" role="button" onclick="openModal(this)" onkeydown="checkKey(event, this)"><img src="images/classroom.jpg" alt="Holy Land Public School classroom" loading="lazy"><figcaption>कक्षा कक्ष</figcaption></figure>
+<figure tabindex="0" role="button" onclick="openModal(this)" onkeydown="checkKey(event, this)"><img src="images/corridor.jpg" alt="School corridor" loading="lazy"><figcaption>विद्यालय कॉरिडोर</figcaption></figure>
+<figure tabindex="0" role="button" onclick="openModal(this)" onkeydown="checkKey(event, this)"><img src="images/office.jpg" alt="School office" loading="lazy"><figcaption>कार्यालय</figcaption></figure>
+<figure tabindex="0" role="button" onclick="openModal(this)" onkeydown="checkKey(event, this)"><img src="images/play-area.jpg" alt="School play area" loading="lazy"><figcaption>खेल/गतिविधि क्षेत्र</figcaption></figure>
+<figure tabindex="0" role="button" onclick="openModal(this)" onkeydown="checkKey(event, this)"><img src="images/admission-board.jpg" alt="School admission board" loading="lazy"><figcaption>Admission जानकारी</figcaption></figure>
+<figure tabindex="0" role="button" onclick="openModal(this)" onkeydown="checkKey(event, this)"><img src="images/residential-board.jpg" alt="Residential school information board" loading="lazy"><figcaption>Residential जानकारी</figcaption></figure>
+<figure tabindex="0" role="button" onclick="openModal(this)" onkeydown="checkKey(event, this)"><img src="images/school-transport.jpg" alt="School transport vehicle" loading="lazy"><figcaption>School transport</figcaption></figure>
 </div>
 </div>
 </section>
 
 <!-- Lightbox Popup Container -->
 <div id="imageModal" class="image-modal" onclick="closeModal()">
-  <span class="image-modal-close">&times;</span>
-  <img id="modalImg" src="" alt="Full view">
+  <span class="image-modal-close" role="button" aria-label="Close modal">&times;</span>
+  <img id="modalImg" src="" alt="Full view preview">
 </div>
 
 <section id="contact" class="light">
@@ -318,7 +321,8 @@ footer strong{color:var(--gold)}
     height="240" 
     style="border:0; display:block;" 
     allowfullscreen="" 
-    loading="lazy">
+    loading="lazy"
+    title="School location on Google Maps">
   </iframe>
 </div>
 <div style="margin-top:14px;">
@@ -333,8 +337,8 @@ footer strong{color:var(--gold)}
 
 <!-- Floating WhatsApp & Call Buttons -->
 <div class="floating-actions">
-  <a href="https://wa.me/919097555827?text=Namaste%20Holy%20Land%20Public%20School%2C%20mujhe%20admission%20ki%20jaankari%20chahiye." class="float-btn float-wa" target="_blank" title="WhatsApp Chat" rel="noopener">💬</a>
-  <a href="tel:9097555827" class="float-btn float-call" title="Call School">📞</a>
+  <a href="https://wa.me/919097555827?text=Namaste%20Holy%20Land%20Public%20School%2C%20mujhe%20admission%20ki%20jaankari%20chahiye." class="float-btn float-wa" target="_blank" aria-label="WhatsApp Chat" title="WhatsApp Chat" rel="noopener">💬</a>
+  <a href="tel:9097555827" class="float-btn float-call" aria-label="Call School" title="Call School">📞</a>
 </div>
 
 <footer>
@@ -365,6 +369,7 @@ function handleInquiry(e) {
   
   const msg = `*New Admission Inquiry - Holy Land Public School*\n\n*Parent Name:* ${parent}\n*Student Name:* ${student}\n*Phone:* ${phone}\n*Class:* ${selectedClass}`;
   window.open(`https://wa.me/919097555827?text=${encodeURIComponent(msg)}`, '_blank');
+  e.target.reset();
 }
 
 function openModal(el) {
@@ -376,6 +381,17 @@ function openModal(el) {
 function closeModal() {
   document.getElementById('imageModal').style.display = 'none';
 }
+
+function checkKey(e, el) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    openModal(el);
+  }
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
 </script>
 </body>
 </html>
