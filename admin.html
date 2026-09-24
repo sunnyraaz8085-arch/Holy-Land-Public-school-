@@ -6,11 +6,7 @@
 
   <title>Holy Land Public School - Admin</title>
 
-  <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-  <!-- Supabase Configuration -->
-  <script src="supabase-config.js"></script>
 
   <style>
     * {
@@ -38,7 +34,6 @@
 
     .header p {
       margin: 6px 0 0;
-      font-size: 14px;
     }
 
     .container {
@@ -56,8 +51,8 @@
     }
 
     h2 {
-      margin-top: 0;
       color: #123c69;
+      margin-top: 0;
     }
 
     input,
@@ -74,40 +69,38 @@
 
     textarea {
       min-height: 100px;
-      resize: vertical;
     }
 
     button {
-      border: none;
+      border: 0;
       padding: 11px 16px;
       border-radius: 8px;
       cursor: pointer;
       font-size: 14px;
-      margin-right: 6px;
-      margin-bottom: 6px;
+      margin: 4px;
     }
 
-    .btn-primary {
+    .primary {
       background: #123c69;
       color: white;
     }
 
-    .btn-success {
+    .success {
       background: #198754;
       color: white;
     }
 
-    .btn-warning {
+    .warning {
       background: #f0ad4e;
       color: white;
     }
 
-    .btn-danger {
+    .danger {
       background: #dc3545;
       color: white;
     }
 
-    .btn-secondary {
+    .secondary {
       background: #6c757d;
       color: white;
     }
@@ -119,17 +112,21 @@
       display: none;
     }
 
-    .success {
+    .ok {
       background: #d1e7dd;
       color: #0f5132;
     }
 
-    .error {
+    .err {
       background: #f8d7da;
       color: #842029;
     }
 
-    .notice-item {
+    .hidden {
+      display: none;
+    }
+
+    .notice {
       border: 1px solid #ddd;
       border-radius: 10px;
       padding: 15px;
@@ -137,14 +134,9 @@
       background: #fafafa;
     }
 
-    .notice-item h3 {
+    .notice h3 {
       margin: 0 0 8px;
       color: #123c69;
-    }
-
-    .notice-item p {
-      margin: 7px 0;
-      line-height: 1.5;
     }
 
     .badge {
@@ -155,29 +147,14 @@
       margin-bottom: 8px;
     }
 
-    .active {
+    .on {
       background: #d1e7dd;
       color: #0f5132;
     }
 
-    .inactive {
+    .off {
       background: #f8d7da;
       color: #842029;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .top-actions {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 15px;
-    }
-
-    .small-text {
-      color: #666;
-      font-size: 13px;
     }
   </style>
 </head>
@@ -192,7 +169,7 @@
   <div class="container">
 
     <!-- LOGIN -->
-    <div id="loginSection" class="card">
+    <div id="loginBox" class="card">
 
       <h2>🔐 Admin Login</h2>
 
@@ -201,46 +178,38 @@
       <label>Email</label>
       <input
         type="email"
-        id="loginEmail"
+        id="email"
         placeholder="Admin Email"
       >
 
       <label>Password</label>
       <input
         type="password"
-        id="loginPassword"
+        id="password"
         placeholder="Password"
       >
 
-      <button
-        type="button"
-        class="btn-primary"
-        onclick="loginAdmin()"
-      >
+      <button class="primary" onclick="login()">
         Login
       </button>
 
     </div>
 
 
-    <!-- ADMIN PANEL -->
-    <div id="adminSection" class="hidden">
+    <!-- ADMIN -->
+    <div id="adminBox" class="hidden">
 
-      <div class="top-actions">
-        <button
-          type="button"
-          class="btn-danger"
-          onclick="logoutAdmin()"
-        >
+      <div style="text-align:right;margin-bottom:15px;">
+        <button class="danger" onclick="logout()">
           Logout
         </button>
       </div>
 
 
-      <!-- ADD / EDIT NOTICE -->
+      <!-- FORM -->
       <div class="card">
 
-        <h2 id="formTitle">➕ Add New Notice</h2>
+        <h2 id="formHeading">➕ Add Notice</h2>
 
         <div id="formMessage" class="message"></div>
 
@@ -249,18 +218,18 @@
         <label>Notice Title</label>
         <input
           type="text"
-          id="noticeTitle"
+          id="title"
           placeholder="Example: Admission Open"
         >
 
         <label>Notice Message</label>
         <textarea
-          id="noticeMessage"
-          placeholder="Notice ka message yahan likhein..."
+          id="message"
+          placeholder="Notice ka message..."
         ></textarea>
 
-        <label>Notice Type</label>
-        <select id="noticeType">
+        <label>Type</label>
+        <select id="type">
           <option value="notice">Notice</option>
           <option value="holiday">Holiday</option>
           <option value="event">Event</option>
@@ -269,45 +238,30 @@
         </select>
 
         <label>Date</label>
-        <input
-          type="date"
-          id="noticeDate"
-        >
+        <input type="date" id="date">
 
         <label>Link (optional)</label>
         <input
           type="url"
-          id="noticeLink"
+          id="link"
           placeholder="https://example.com"
         >
 
-        <button
-          type="button"
-          class="btn-success"
-          onclick="saveNotice()"
-        >
+        <button class="success" onclick="saveNotice()">
           💾 Save Notice
         </button>
 
-        <button
-          type="button"
-          class="btn-secondary"
-          onclick="resetForm()"
-        >
+        <button class="secondary" onclick="clearForm()">
           Clear
         </button>
 
       </div>
 
 
-      <!-- NOTICE LIST -->
+      <!-- LIST -->
       <div class="card">
 
         <h2>📋 All Notices</h2>
-
-        <p class="small-text">
-          Yahan se notice ko edit, activate/deactivate ya delete kar sakte hain.
-        </p>
 
         <div id="noticeList">
           Loading...
@@ -322,142 +276,78 @@
 
   <script>
 
-    // ==============================
-    // SHOW MESSAGE
-    // ==============================
+    // ==========================================
+    // SUPABASE SETTINGS
+    // ==========================================
 
-    function showMessage(elementId, text, type) {
+    const SUPABASE_URL =
+      "https://rxrundokeksglyigbocv.supabase.co";
 
-      const element = document.getElementById(elementId);
+    const SUPABASE_PUBLISHABLE_KEY =
+      sb_publishable_-wkRDWu6FloTLy5xsrvvwQ_Qt3sJkfb
 
-      element.textContent = text;
-      element.className = "message " + type;
-      element.style.display = "block";
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
 
+
+    // ==========================================
+    // MESSAGE
+    // ==========================================
+
+    function showMessage(id, text, type) {
+
+      const box = document.getElementById(id);
+
+      box.textContent = text;
+
+      box.className =
+        "message " + type;
+
+      box.style.display = "block";
     }
 
 
-    // ==============================
-    // LOGIN
-    // ==============================
+    // ==========================================
+    // CHECK LOGIN
+    // ==========================================
 
     async function checkLogin() {
 
       try {
 
-        const {
-          data: { session },
-          error
-        } = await supabaseClient.auth.getSession();
+        const result =
+          await supabaseClient.auth.getSession();
 
-        if (error) {
-          console.error(error);
-          showLogin();
-          return;
-        }
-
-        if (session) {
-          showAdminPanel();
-        } else {
-          showLogin();
-        }
-
-      } catch (error) {
-
-        console.error(error);
-
-        showLogin();
-
-        showMessage(
-          "loginMessage",
-          "System error: " + error.message,
-          "error"
-        );
-
-      }
-
-    }
-
-
-    function showLogin() {
-
-      document
-        .getElementById("loginSection")
-        .classList.remove("hidden");
-
-      document
-        .getElementById("adminSection")
-        .classList.add("hidden");
-
-    }
-
-
-    async function loginAdmin() {
-
-      const email =
-        document.getElementById("loginEmail").value.trim();
-
-      const password =
-        document.getElementById("loginPassword").value;
-
-      if (!email || !password) {
-
-        showMessage(
-          "loginMessage",
-          "Email aur password dono bharein.",
-          "error"
-        );
-
-        return;
-      }
-
-      showMessage(
-        "loginMessage",
-        "Login ho raha hai...",
-        "success"
-      );
-
-      try {
-
-        const {
-          data,
-          error
-        } = await supabaseClient.auth.signInWithPassword({
-
-          email: email,
-          password: password
-
-        });
-
-        if (error) {
-
-          console.error(error);
+        if (result.error) {
 
           showMessage(
             "loginMessage",
-            error.message,
-            "error"
+            result.error.message,
+            "err"
           );
 
           return;
         }
 
-        if (data.session) {
+        if (result.data.session) {
 
-          document.getElementById("loginMessage").style.display = "none";
+          showAdmin();
 
-          showAdminPanel();
+        } else {
+
+          showLogin();
 
         }
 
       } catch (error) {
 
-        console.error(error);
-
         showMessage(
           "loginMessage",
-          "Login error: " + error.message,
-          "error"
+          error.message,
+          "err"
         );
 
       }
@@ -465,34 +355,35 @@
     }
 
 
-    // ==============================
-    // LOGOUT
-    // ==============================
+    // ==========================================
+    // SHOW LOGIN
+    // ==========================================
 
-    async function logoutAdmin() {
+    function showLogin() {
 
-      await supabaseClient.auth.signOut();
+      document
+        .getElementById("loginBox")
+        .classList.remove("hidden");
 
-      showLogin();
-
-      document.getElementById("loginEmail").value = "";
-      document.getElementById("loginPassword").value = "";
+      document
+        .getElementById("adminBox")
+        .classList.add("hidden");
 
     }
 
 
-    // ==============================
-    // SHOW ADMIN PANEL
-    // ==============================
+    // ==========================================
+    // SHOW ADMIN
+    // ==========================================
 
-    function showAdminPanel() {
+    function showAdmin() {
 
       document
-        .getElementById("loginSection")
+        .getElementById("loginBox")
         .classList.add("hidden");
 
       document
-        .getElementById("adminSection")
+        .getElementById("adminBox")
         .classList.remove("hidden");
 
       loadNotices();
@@ -500,141 +391,194 @@
     }
 
 
-    // ==============================
-    // SAVE NOTICE
-    // ==============================
+    // ==========================================
+    // LOGIN
+    // ==========================================
 
-    async function saveNotice() {
+    async function login() {
 
-      const editId =
-        document.getElementById("editId").value;
+      const email =
+        document.getElementById("email").value.trim();
 
-      const title =
-        document.getElementById("noticeTitle").value.trim();
-
-      const message =
-        document.getElementById("noticeMessage").value.trim();
-
-      const type =
-        document.getElementById("noticeType").value;
-
-      const noticeDate =
-        document.getElementById("noticeDate").value || null;
-
-      const link =
-        document.getElementById("noticeLink").value.trim() || null;
+      const password =
+        document.getElementById("password").value;
 
 
-      if (!title || !message) {
+      if (!email || !password) {
 
         showMessage(
-          "formMessage",
-          "Title aur message zaroor bharein.",
-          "error"
+          "loginMessage",
+          "Email aur password bharein.",
+          "err"
         );
 
         return;
       }
 
 
-      try {
+      showMessage(
+        "loginMessage",
+        "Login ho raha hai...",
+        "ok"
+      );
 
-        let result;
 
-        if (editId) {
+      const result =
+        await supabaseClient.auth.signInWithPassword({
 
-          result = await supabaseClient
+          email: email,
+          password: password
+
+        });
+
+
+      if (result.error) {
+
+        showMessage(
+          "loginMessage",
+          result.error.message,
+          "err"
+        );
+
+        return;
+      }
+
+
+      showAdmin();
+
+    }
+
+
+    // ==========================================
+    // LOGOUT
+    // ==========================================
+
+    async function logout() {
+
+      await supabaseClient.auth.signOut();
+
+      showLogin();
+
+    }
+
+
+    // ==========================================
+    // SAVE NOTICE
+    // ==========================================
+
+    async function saveNotice() {
+
+      const id =
+        document.getElementById("editId").value;
+
+      const title =
+        document.getElementById("title").value.trim();
+
+      const message =
+        document.getElementById("message").value.trim();
+
+      const type =
+        document.getElementById("type").value;
+
+      const date =
+        document.getElementById("date").value || null;
+
+      const link =
+        document.getElementById("link").value.trim() || null;
+
+
+      if (!title || !message) {
+
+        showMessage(
+          "formMessage",
+          "Title aur message bharein.",
+          "err"
+        );
+
+        return;
+      }
+
+
+      let result;
+
+
+      if (id) {
+
+        result =
+          await supabaseClient
             .from("notifications")
             .update({
 
               title: title,
               message: message,
               type: type,
-              notice_date: noticeDate,
+              notice_date: date,
               link: link
 
             })
-            .eq("id", editId);
+            .eq("id", id);
 
-        } else {
+      } else {
 
-          result = await supabaseClient
+        result =
+          await supabaseClient
             .from("notifications")
             .insert({
 
               title: title,
               message: message,
               type: type,
-              notice_date: noticeDate,
+              notice_date: date,
               link: link,
               active: true
 
             });
 
-        }
-
-
-        if (result.error) {
-
-          console.error(result.error);
-
-          showMessage(
-            "formMessage",
-            result.error.message,
-            "error"
-          );
-
-          return;
-        }
-
-
-        showMessage(
-          "formMessage",
-          editId
-            ? "Notice successfully update ho gaya."
-            : "Notice successfully add ho gaya.",
-          "success"
-        );
-
-
-        resetForm();
-
-        loadNotices();
-
-
-      } catch (error) {
-
-        console.error(error);
-
-        showMessage(
-          "formMessage",
-          "Error: " + error.message,
-          "error"
-        );
-
       }
+
+
+      if (result.error) {
+
+        showMessage(
+          "formMessage",
+          result.error.message,
+          "err"
+        );
+
+        return;
+      }
+
+
+      showMessage(
+        "formMessage",
+        id
+          ? "Notice update ho gaya."
+          : "Notice add ho gaya.",
+        "ok"
+      );
+
+
+      clearForm();
+
+      loadNotices();
 
     }
 
 
-    // ==============================
+    // ==========================================
     // LOAD NOTICES
-    // ==============================
+    // ==========================================
 
     async function loadNotices() {
 
       const list =
         document.getElementById("noticeList");
 
-      list.innerHTML = "Loading notices...";
+      list.innerHTML = "Loading...";
 
 
-      try {
-
-        const {
-          data,
-          error
-        } = await supabaseClient
+      const result =
+        await supabaseClient
           .from("notifications")
           .select("*")
           .order("notice_date", {
@@ -643,114 +587,89 @@
           });
 
 
-        if (error) {
+      if (result.error) {
 
-          console.error(error);
+        list.innerHTML =
+          "<p style='color:red;'>" +
+          escapeHtml(result.error.message) +
+          "</p>";
 
-          list.innerHTML =
-            "<p style='color:red;'>Error: " +
-            escapeHtml(error.message) +
-            "</p>";
-
-          return;
-        }
+        return;
+      }
 
 
-        if (!data || data.length === 0) {
+      if (!result.data.length) {
 
-          list.innerHTML =
-            "<p>Abhi koi notice nahi hai.</p>";
+        list.innerHTML =
+          "<p>Abhi koi notice nahi hai.</p>";
 
-          return;
-        }
+        return;
+      }
 
 
-        list.innerHTML = data.map(notice => {
+      list.innerHTML =
+        result.data.map(function(item) {
+
+          const status =
+            item.active ? "ACTIVE" : "INACTIVE";
 
           const statusClass =
-            notice.active ? "active" : "inactive";
-
-          const statusText =
-            notice.active ? "ACTIVE" : "INACTIVE";
-
-
-          const dateText =
-            notice.notice_date
-              ? notice.notice_date
-              : "No date";
+            item.active ? "on" : "off";
 
 
           return `
 
-            <div class="notice-item">
+            <div class="notice">
 
               <span class="badge ${statusClass}">
-                ${statusText}
+                ${status}
               </span>
 
               <h3>
-                ${escapeHtml(notice.title || "")}
+                ${escapeHtml(item.title || "")}
               </h3>
 
               <p>
-                ${escapeHtml(notice.message || "")}
+                ${escapeHtml(item.message || "")}
               </p>
 
-              <p class="small-text">
+              <p>
                 <strong>Type:</strong>
-                ${escapeHtml(notice.type || "notice")}
+                ${escapeHtml(item.type || "notice")}
                 <br>
 
                 <strong>Date:</strong>
-                ${escapeHtml(dateText)}
+                ${escapeHtml(item.notice_date || "No date")}
               </p>
 
               ${
-                notice.link
-                ? `
-                  <p>
-                    <a
-                      href="${escapeHtml(notice.link)}"
-                      target="_blank"
-                    >
-                      🔗 Open Link
+                item.link
+                ? `<p>
+                    <a href="${escapeHtml(item.link)}"
+                       target="_blank">
+                       🔗 Open Link
                     </a>
-                  </p>
-                `
+                   </p>`
                 : ""
               }
 
-              <div>
+              <button
+                class="warning"
+                onclick="editNotice('${item.id}')">
+                ✏️ Edit
+              </button>
 
-                <button
-                  type="button"
-                  class="btn-warning"
-                  onclick="editNotice('${notice.id}')"
-                >
-                  ✏️ Edit
-                </button>
+              <button
+                class="primary"
+                onclick="toggleNotice('${item.id}', ${item.active})">
+                ${item.active ? "Deactivate" : "Activate"}
+              </button>
 
-                <button
-                  type="button"
-                  class="btn-primary"
-                  onclick="toggleNotice('${notice.id}', ${notice.active})"
-                >
-                  ${
-                    notice.active
-                    ? "Deactivate"
-                    : "Activate"
-                  }
-                </button>
-
-                <button
-                  type="button"
-                  class="btn-danger"
-                  onclick="deleteNotice('${notice.id}')"
-                >
-                  🗑️ Delete
-                </button>
-
-              </div>
+              <button
+                class="danger"
+                onclick="deleteNotice('${item.id}')">
+                🗑️ Delete
+              </button>
 
             </div>
 
@@ -758,203 +677,155 @@
 
         }).join("");
 
-
-      } catch (error) {
-
-        console.error(error);
-
-        list.innerHTML =
-          "<p style='color:red;'>Error: " +
-          escapeHtml(error.message) +
-          "</p>";
-
-      }
-
     }
 
 
-    // ==============================
-    // EDIT NOTICE
-    // ==============================
+    // ==========================================
+    // EDIT
+    // ==========================================
 
     async function editNotice(id) {
 
-      try {
-
-        const {
-          data,
-          error
-        } = await supabaseClient
+      const result =
+        await supabaseClient
           .from("notifications")
           .select("*")
           .eq("id", id)
           .single();
 
 
-        if (error) {
+      if (result.error) {
 
-          alert(error.message);
-          return;
-
-        }
-
-
-        document.getElementById("editId").value =
-          data.id;
-
-        document.getElementById("noticeTitle").value =
-          data.title || "";
-
-        document.getElementById("noticeMessage").value =
-          data.message || "";
-
-        document.getElementById("noticeType").value =
-          data.type || "notice";
-
-        document.getElementById("noticeDate").value =
-          data.notice_date || "";
-
-        document.getElementById("noticeLink").value =
-          data.link || "";
-
-
-        document.getElementById("formTitle").textContent =
-          "✏️ Edit Notice";
-
-
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-
-
-      } catch (error) {
-
-        console.error(error);
-
-        alert(error.message);
+        alert(result.error.message);
+        return;
 
       }
+
+
+      const item = result.data;
+
+
+      document.getElementById("editId").value =
+        item.id;
+
+      document.getElementById("title").value =
+        item.title || "";
+
+      document.getElementById("message").value =
+        item.message || "";
+
+      document.getElementById("type").value =
+        item.type || "notice";
+
+      document.getElementById("date").value =
+        item.notice_date || "";
+
+      document.getElementById("link").value =
+        item.link || "";
+
+
+      document.getElementById("formHeading").textContent =
+        "✏️ Edit Notice";
+
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
 
     }
 
 
-    // ==============================
+    // ==========================================
     // ACTIVATE / DEACTIVATE
-    // ==============================
+    // ==========================================
 
-    async function toggleNotice(id, currentStatus) {
+    async function toggleNotice(id, status) {
 
-      try {
-
-        const {
-          error
-        } = await supabaseClient
+      const result =
+        await supabaseClient
           .from("notifications")
           .update({
-            active: !currentStatus
+            active: !status
           })
           .eq("id", id);
 
 
-        if (error) {
+      if (result.error) {
 
-          alert(error.message);
-          return;
-
-        }
-
-
-        loadNotices();
-
-
-      } catch (error) {
-
-        console.error(error);
-
-        alert(error.message);
+        alert(result.error.message);
+        return;
 
       }
+
+
+      loadNotices();
 
     }
 
 
-    // ==============================
-    // DELETE NOTICE
-    // ==============================
+    // ==========================================
+    // DELETE
+    // ==========================================
 
     async function deleteNotice(id) {
 
-      const confirmDelete =
-        confirm(
+      if (
+        !confirm(
           "Kya aap is notice ko delete karna chahte hain?"
-        );
-
-
-      if (!confirmDelete) {
+        )
+      ) {
         return;
       }
 
 
-      try {
-
-        const {
-          error
-        } = await supabaseClient
+      const result =
+        await supabaseClient
           .from("notifications")
           .delete()
           .eq("id", id);
 
 
-        if (error) {
+      if (result.error) {
 
-          alert(error.message);
-          return;
-
-        }
-
-
-        loadNotices();
-
-
-      } catch (error) {
-
-        console.error(error);
-
-        alert(error.message);
+        alert(result.error.message);
+        return;
 
       }
 
+
+      loadNotices();
+
     }
 
 
-    // ==============================
-    // RESET FORM
-    // ==============================
+    // ==========================================
+    // CLEAR FORM
+    // ==========================================
 
-    function resetForm() {
+    function clearForm() {
 
       document.getElementById("editId").value = "";
 
-      document.getElementById("noticeTitle").value = "";
+      document.getElementById("title").value = "";
 
-      document.getElementById("noticeMessage").value = "";
+      document.getElementById("message").value = "";
 
-      document.getElementById("noticeType").value = "notice";
+      document.getElementById("type").value = "notice";
 
-      document.getElementById("noticeDate").value = "";
+      document.getElementById("date").value = "";
 
-      document.getElementById("noticeLink").value = "";
+      document.getElementById("link").value = "";
 
-      document.getElementById("formTitle").textContent =
-        "➕ Add New Notice";
+      document.getElementById("formHeading").textContent =
+        "➕ Add Notice";
 
     }
 
 
-    // ==============================
-    // SECURITY - HTML ESCAPE
-    // ==============================
+    // ==========================================
+    // ESCAPE HTML
+    // ==========================================
 
     function escapeHtml(value) {
 
@@ -968,9 +839,9 @@
     }
 
 
-    // ==============================
+    // ==========================================
     // START
-    // ==============================
+    // ==========================================
 
     window.addEventListener("load", function() {
 
