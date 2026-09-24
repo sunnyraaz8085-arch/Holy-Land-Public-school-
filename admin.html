@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Holy Land Public School - Admin Panel</title>
 
+  <title>Holy Land Public School - Admin</title>
+
+  <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Supabase Configuration -->
   <script src="supabase-config.js"></script>
 
   <style>
@@ -16,50 +20,44 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f3f6fa;
+      background: #f4f6f8;
       color: #222;
     }
 
     .header {
-      background: #123b6d;
+      background: #123c69;
       color: white;
-      padding: 18px 15px;
+      padding: 20px;
       text-align: center;
     }
 
     .header h1 {
-      margin: 0 0 6px;
-      font-size: 22px;
+      margin: 0;
+      font-size: 24px;
     }
 
     .header p {
-      margin: 0;
+      margin: 6px 0 0;
       font-size: 14px;
     }
 
     .container {
-      max-width: 900px;
+      width: 95%;
+      max-width: 800px;
       margin: 25px auto;
-      padding: 0 15px;
     }
 
     .card {
       background: white;
-      border-radius: 12px;
       padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
       margin-bottom: 20px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
     }
 
     h2 {
       margin-top: 0;
-      color: #123b6d;
-    }
-
-    label {
-      display: block;
-      font-weight: bold;
-      margin: 14px 0 6px;
+      color: #123c69;
     }
 
     input,
@@ -67,170 +65,119 @@
     select {
       width: 100%;
       padding: 12px;
-      border: 1px solid #ccd3dc;
-      border-radius: 7px;
+      margin-top: 7px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
       font-size: 15px;
-      background: white;
     }
 
     textarea {
-      min-height: 110px;
+      min-height: 100px;
       resize: vertical;
     }
 
-    .btn {
-      border: 0;
-      border-radius: 7px;
+    button {
+      border: none;
       padding: 11px 16px;
-      font-size: 14px;
+      border-radius: 8px;
       cursor: pointer;
-      margin: 6px 4px 0 0;
+      font-size: 14px;
+      margin-right: 6px;
+      margin-bottom: 6px;
     }
 
     .btn-primary {
-      background: #123b6d;
+      background: #123c69;
       color: white;
     }
 
     .btn-success {
-      background: #168447;
+      background: #198754;
+      color: white;
+    }
+
+    .btn-warning {
+      background: #f0ad4e;
       color: white;
     }
 
     .btn-danger {
-      background: #c62828;
+      background: #dc3545;
       color: white;
     }
 
     .btn-secondary {
-      background: #e5e9ee;
-      color: #222;
-    }
-
-    .btn-warning {
-      background: #e59b00;
+      background: #6c757d;
       color: white;
     }
 
-    .hidden {
-      display: none !important;
-    }
-
     .message {
-      padding: 12px;
-      border-radius: 7px;
+      padding: 10px;
+      border-radius: 8px;
       margin-bottom: 15px;
       display: none;
     }
 
-    .message.success {
-      display: block;
-      background: #e8f7ed;
-      color: #146c35;
+    .success {
+      background: #d1e7dd;
+      color: #0f5132;
     }
 
-    .message.error {
-      display: block;
-      background: #fdecec;
-      color: #a21d1d;
-    }
-
-    .login-box {
-      max-width: 450px;
-      margin: 50px auto;
+    .error {
+      background: #f8d7da;
+      color: #842029;
     }
 
     .notice-item {
-      border: 1px solid #dce2e8;
+      border: 1px solid #ddd;
       border-radius: 10px;
       padding: 15px;
       margin-bottom: 12px;
+      background: #fafafa;
     }
 
-    .notice-item.inactive {
-      opacity: 0.6;
-      background: #f5f5f5;
+    .notice-item h3 {
+      margin: 0 0 8px;
+      color: #123c69;
     }
 
-    .notice-title {
-      font-size: 18px;
-      font-weight: bold;
-      color: #123b6d;
-      margin-bottom: 7px;
-    }
-
-    .notice-message {
-      white-space: pre-wrap;
+    .notice-item p {
+      margin: 7px 0;
       line-height: 1.5;
-      margin-bottom: 8px;
     }
 
-    .notice-meta {
-      font-size: 13px;
-      color: #666;
-      margin-bottom: 8px;
-    }
-
-    .status {
+    .badge {
       display: inline-block;
-      padding: 4px 8px;
+      padding: 5px 9px;
       border-radius: 20px;
       font-size: 12px;
-      font-weight: bold;
       margin-bottom: 8px;
     }
 
-    .status.active {
-      background: #dff5e7;
-      color: #16743a;
+    .active {
+      background: #d1e7dd;
+      color: #0f5132;
     }
 
-    .status.inactive {
-      background: #eee;
+    .inactive {
+      background: #f8d7da;
+      color: #842029;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .top-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+    }
+
+    .small-text {
       color: #666;
-    }
-
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .topbar h2 {
-      margin: 0;
-    }
-
-    .checkbox-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 15px;
-    }
-
-    .checkbox-row input {
-      width: auto;
-    }
-
-    .empty {
-      text-align: center;
-      color: #777;
-      padding: 20px;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        margin: 15px auto;
-      }
-
-      .card {
-        padding: 15px;
-      }
-
-      .header h1 {
-        font-size: 19px;
-      }
+      font-size: 13px;
     }
   </style>
 </head>
@@ -239,135 +186,133 @@
 
   <div class="header">
     <h1>HOLY LAND PUBLIC SCHOOL</h1>
-    <p>Admin Panel - Notice Board</p>
+    <p>Admin Panel - Notice Management</p>
   </div>
 
-  <!-- LOGIN -->
-  <div id="loginSection" class="container">
-    <div class="card login-box">
-      <h2>Admin Login</h2>
+  <div class="container">
+
+    <!-- LOGIN -->
+    <div id="loginSection" class="card">
+
+      <h2>🔐 Admin Login</h2>
 
       <div id="loginMessage" class="message"></div>
 
-      <label for="loginEmail">Email</label>
+      <label>Email</label>
       <input
         type="email"
         id="loginEmail"
-        placeholder="Admin email"
-        autocomplete="email"
+        placeholder="Admin Email"
       >
 
-      <label for="loginPassword">Password</label>
+      <label>Password</label>
       <input
         type="password"
         id="loginPassword"
         placeholder="Password"
-        autocomplete="current-password"
       >
 
-      <button class="btn btn-primary" onclick="loginAdmin()">
+      <button
+        type="button"
+        class="btn-primary"
+        onclick="loginAdmin()"
+      >
         Login
       </button>
+
     </div>
-  </div>
 
 
-  <!-- ADMIN PANEL -->
-  <div id="adminSection" class="container hidden">
+    <!-- ADMIN PANEL -->
+    <div id="adminSection" class="hidden">
 
-    <div class="card">
-      <div class="topbar">
-        <h2>Notice Management</h2>
-        <button class="btn btn-danger" onclick="logoutAdmin()">
+      <div class="top-actions">
+        <button
+          type="button"
+          class="btn-danger"
+          onclick="logoutAdmin()"
+        >
           Logout
         </button>
       </div>
 
-      <p style="color:#666;">
-        यहाँ से आप स्कूल की छुट्टी, admission, event और दूसरी सभी notices
-        जोड़, बदल या बंद कर सकते हैं।
-      </p>
-    </div>
 
+      <!-- ADD / EDIT NOTICE -->
+      <div class="card">
 
-    <!-- ADD / EDIT NOTICE -->
-    <div class="card">
+        <h2 id="formTitle">➕ Add New Notice</h2>
 
-      <h2 id="formHeading">Add New Notice</h2>
+        <div id="formMessage" class="message"></div>
 
-      <div id="formMessage" class="message"></div>
+        <input type="hidden" id="editId">
 
-      <input type="hidden" id="editId">
+        <label>Notice Title</label>
+        <input
+          type="text"
+          id="noticeTitle"
+          placeholder="Example: Admission Open"
+        >
 
-      <label for="noticeTitle">Notice Title *</label>
-      <input
-        type="text"
-        id="noticeTitle"
-        placeholder="जैसे: School Holiday"
-      >
+        <label>Notice Message</label>
+        <textarea
+          id="noticeMessage"
+          placeholder="Notice ka message yahan likhein..."
+        ></textarea>
 
-      <label for="noticeMessage">Notice Message *</label>
-      <textarea
-        id="noticeMessage"
-        placeholder="जैसे: दिनांक 2 अक्टूबर को गांधी जयंती के अवसर पर विद्यालय बंद रहेगा।"
-      ></textarea>
+        <label>Notice Type</label>
+        <select id="noticeType">
+          <option value="notice">Notice</option>
+          <option value="holiday">Holiday</option>
+          <option value="event">Event</option>
+          <option value="admission">Admission</option>
+          <option value="important">Important</option>
+        </select>
 
-      <label for="noticeType">Notice Type</label>
-      <select id="noticeType">
-        <option value="general">📢 General</option>
-        <option value="holiday">📅 Holiday</option>
-        <option value="admission">🎓 Admission</option>
-        <option value="event">🎉 Event</option>
-        <option value="urgent">🚨 Urgent</option>
-      </select>
+        <label>Date</label>
+        <input
+          type="date"
+          id="noticeDate"
+        >
 
-      <label for="noticeDate">Notice Date</label>
-      <input type="date" id="noticeDate">
+        <label>Link (optional)</label>
+        <input
+          type="url"
+          id="noticeLink"
+          placeholder="https://example.com"
+        >
 
-      <label for="noticeLink">Link (optional)</label>
-      <input
-        type="url"
-        id="noticeLink"
-        placeholder="https://example.com"
-      >
-
-      <div class="checkbox-row">
-        <input type="checkbox" id="noticeActive" checked>
-        <label for="noticeActive" style="margin:0;">
-          Website पर दिखाएँ
-        </label>
-      </div>
-
-      <div style="margin-top:15px;">
-        <button class="btn btn-success" onclick="saveNotice()">
-          Save Notice
+        <button
+          type="button"
+          class="btn-success"
+          onclick="saveNotice()"
+        >
+          💾 Save Notice
         </button>
 
         <button
-          class="btn btn-secondary hidden"
-          id="cancelEditBtn"
-          onclick="cancelEdit()"
+          type="button"
+          class="btn-secondary"
+          onclick="resetForm()"
         >
-          Cancel Edit
+          Clear
         </button>
+
       </div>
 
-    </div>
 
+      <!-- NOTICE LIST -->
+      <div class="card">
 
-    <!-- NOTICE LIST -->
-    <div class="card">
+        <h2>📋 All Notices</h2>
 
-      <div class="topbar">
-        <h2>All Notices</h2>
+        <p class="small-text">
+          Yahan se notice ko edit, activate/deactivate ya delete kar sakte hain.
+        </p>
 
-        <button class="btn btn-secondary" onclick="loadNotices()">
-          Refresh
-        </button>
-      </div>
+        <div id="noticeList">
+          Loading...
+        </div>
 
-      <div id="noticeList">
-        <div class="empty">Loading notices...</div>
       </div>
 
     </div>
@@ -375,497 +320,665 @@
   </div>
 
 
-<script>
+  <script>
 
-  let editingId = null;
+    // ==============================
+    // SHOW MESSAGE
+    // ==============================
 
+    function showMessage(elementId, text, type) {
 
-  // Show message
-  function showMessage(elementId, text, type) {
-    const el = document.getElementById(elementId);
+      const element = document.getElementById(elementId);
 
-    el.textContent = text;
-    el.className = "message " + type;
+      element.textContent = text;
+      element.className = "message " + type;
+      element.style.display = "block";
 
-    setTimeout(() => {
-      el.className = "message";
-      el.textContent = "";
-    }, 5000);
-  }
+    }
 
 
-  // Check login when page opens
-  async function checkLogin() {
+    // ==============================
+    // LOGIN
+    // ==============================
 
-    const {
-      data: { session }
-    } = await supabaseClient.auth.getSession();
+    async function checkLogin() {
 
-    if (session) {
-      showAdminPanel();
-    } else {
+      try {
+
+        const {
+          data: { session },
+          error
+        } = await supabaseClient.auth.getSession();
+
+        if (error) {
+          console.error(error);
+          showLogin();
+          return;
+        }
+
+        if (session) {
+          showAdminPanel();
+        } else {
+          showLogin();
+        }
+
+      } catch (error) {
+
+        console.error(error);
+
+        showLogin();
+
+        showMessage(
+          "loginMessage",
+          "System error: " + error.message,
+          "error"
+        );
+
+      }
+
+    }
+
+
+    function showLogin() {
+
+      document
+        .getElementById("loginSection")
+        .classList.remove("hidden");
+
+      document
+        .getElementById("adminSection")
+        .classList.add("hidden");
+
+    }
+
+
+    async function loginAdmin() {
+
+      const email =
+        document.getElementById("loginEmail").value.trim();
+
+      const password =
+        document.getElementById("loginPassword").value;
+
+      if (!email || !password) {
+
+        showMessage(
+          "loginMessage",
+          "Email aur password dono bharein.",
+          "error"
+        );
+
+        return;
+      }
+
+      showMessage(
+        "loginMessage",
+        "Login ho raha hai...",
+        "success"
+      );
+
+      try {
+
+        const {
+          data,
+          error
+        } = await supabaseClient.auth.signInWithPassword({
+
+          email: email,
+          password: password
+
+        });
+
+        if (error) {
+
+          console.error(error);
+
+          showMessage(
+            "loginMessage",
+            error.message,
+            "error"
+          );
+
+          return;
+        }
+
+        if (data.session) {
+
+          document.getElementById("loginMessage").style.display = "none";
+
+          showAdminPanel();
+
+        }
+
+      } catch (error) {
+
+        console.error(error);
+
+        showMessage(
+          "loginMessage",
+          "Login error: " + error.message,
+          "error"
+        );
+
+      }
+
+    }
+
+
+    // ==============================
+    // LOGOUT
+    // ==============================
+
+    async function logoutAdmin() {
+
+      await supabaseClient.auth.signOut();
+
       showLogin();
-    }
-  }
 
+      document.getElementById("loginEmail").value = "";
+      document.getElementById("loginPassword").value = "";
 
-  function showAdminPanel() {
-    document.getElementById("loginSection").classList.add("hidden");
-    document.getElementById("adminSection").classList.remove("hidden");
-
-    loadNotices();
-  }
-
-
-  function showLogin() {
-    document.getElementById("loginSection").classList.remove("hidden");
-    document.getElementById("adminSection").classList.add("hidden");
-  }
-
-
-  // Login
-  async function loginAdmin() {
-
-    const email = document.getElementById("loginEmail").value.trim();
-    const password = document.getElementById("loginPassword").value;
-
-    if (!email || !password) {
-      showMessage(
-        "loginMessage",
-        "Email और password दोनों भरें।",
-        "error"
-      );
-      return;
     }
 
-    const { data, error } =
-      await supabaseClient.auth.signInWithPassword({
-        email: email,
-        password: password
-      });
 
-    if (error) {
+    // ==============================
+    // SHOW ADMIN PANEL
+    // ==============================
 
-      showMessage(
-        "loginMessage",
-        "Login failed: " + error.message,
-        "error"
-      );
+    function showAdminPanel() {
 
-      return;
+      document
+        .getElementById("loginSection")
+        .classList.add("hidden");
+
+      document
+        .getElementById("adminSection")
+        .classList.remove("hidden");
+
+      loadNotices();
+
     }
 
-    showAdminPanel();
-  }
+
+    // ==============================
+    // SAVE NOTICE
+    // ==============================
+
+    async function saveNotice() {
+
+      const editId =
+        document.getElementById("editId").value;
+
+      const title =
+        document.getElementById("noticeTitle").value.trim();
+
+      const message =
+        document.getElementById("noticeMessage").value.trim();
+
+      const type =
+        document.getElementById("noticeType").value;
+
+      const noticeDate =
+        document.getElementById("noticeDate").value || null;
+
+      const link =
+        document.getElementById("noticeLink").value.trim() || null;
 
 
-  // Logout
-  async function logoutAdmin() {
+      if (!title || !message) {
 
-    await supabaseClient.auth.signOut();
+        showMessage(
+          "formMessage",
+          "Title aur message zaroor bharein.",
+          "error"
+        );
 
-    editingId = null;
-
-    showLogin();
-
-    document.getElementById("loginPassword").value = "";
-  }
-
-
-  // Load all notices
-  async function loadNotices() {
-
-    const list = document.getElementById("noticeList");
-
-    list.innerHTML =
-      '<div class="empty">Loading notices...</div>';
-
-    const { data, error } = await supabaseClient
-      .from("notifications")
-      .select("*")
-      .order("notice_date", {
-        ascending: false
-      })
-      .order("created_at", {
-        ascending: false
-      });
-
-    if (error) {
-
-      list.innerHTML =
-        '<div class="empty">Notices load नहीं हो सकीं: ' +
-        escapeHtml(error.message) +
-        '</div>';
-
-      return;
-    }
-
-    if (!data || data.length === 0) {
-
-      list.innerHTML =
-        '<div class="empty">अभी कोई notice नहीं है।</div>';
-
-      return;
-    }
-
-    list.innerHTML = data
-      .map(notice => createNoticeHTML(notice))
-      .join("");
-  }
+        return;
+      }
 
 
-  // Create notice HTML
-  function createNoticeHTML(notice) {
+      try {
 
-    const typeIcons = {
-      general: "📢",
-      holiday: "📅",
-      admission: "🎓",
-      event: "🎉",
-      urgent: "🚨"
-    };
+        let result;
 
-    const icon =
-      typeIcons[notice.type] || "📢";
+        if (editId) {
 
-    const statusClass =
-      notice.active ? "active" : "inactive";
+          result = await supabaseClient
+            .from("notifications")
+            .update({
 
-    const statusText =
-      notice.active ? "ACTIVE" : "INACTIVE";
+              title: title,
+              message: message,
+              type: type,
+              notice_date: noticeDate,
+              link: link
 
-    let dateText = "";
+            })
+            .eq("id", editId);
 
-    if (notice.notice_date) {
+        } else {
 
-      const d =
-        new Date(notice.notice_date + "T00:00:00");
+          result = await supabaseClient
+            .from("notifications")
+            .insert({
 
-      dateText =
-        d.toLocaleDateString("en-IN", {
-          day: "2-digit",
-          month: "long",
-          year: "numeric"
-        });
-    }
+              title: title,
+              message: message,
+              type: type,
+              notice_date: noticeDate,
+              link: link,
+              active: true
 
-    return `
-      <div class="notice-item ${notice.active ? "" : "inactive"}">
+            });
 
-        <div>
-          <span class="status ${statusClass}">
-            ${statusText}
-          </span>
-        </div>
-
-        <div class="notice-title">
-          ${icon} ${escapeHtml(notice.title || "")}
-        </div>
-
-        <div class="notice-message">
-          ${escapeHtml(notice.message || "")}
-        </div>
-
-        ${
-          dateText
-            ? `<div class="notice-meta">
-                📅 Date: ${escapeHtml(dateText)}
-               </div>`
-            : ""
         }
 
-        ${
-          notice.link
-            ? `<div class="notice-meta">
-                🔗 Link: ${escapeHtml(notice.link)}
-               </div>`
-            : ""
+
+        if (result.error) {
+
+          console.error(result.error);
+
+          showMessage(
+            "formMessage",
+            result.error.message,
+            "error"
+          );
+
+          return;
         }
 
-        <div>
 
-          <button
-            class="btn btn-primary"
-            onclick="editNotice('${notice.id}')"
-          >
-            Edit
-          </button>
-
-          <button
-            class="btn btn-warning"
-            onclick="toggleNotice('${notice.id}', ${notice.active})"
-          >
-            ${notice.active ? "Deactivate" : "Activate"}
-          </button>
-
-          <button
-            class="btn btn-danger"
-            onclick="deleteNotice('${notice.id}')"
-          >
-            Delete
-          </button>
-
-        </div>
-
-      </div>
-    `;
-  }
+        showMessage(
+          "formMessage",
+          editId
+            ? "Notice successfully update ho gaya."
+            : "Notice successfully add ho gaya.",
+          "success"
+        );
 
 
-  // Escape HTML
-  function escapeHtml(value) {
+        resetForm();
 
-    return String(value)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  }
+        loadNotices();
 
 
-  // Save new or edited notice
-  async function saveNotice() {
+      } catch (error) {
 
-    const title =
-      document.getElementById("noticeTitle").value.trim();
+        console.error(error);
 
-    const message =
-      document.getElementById("noticeMessage").value.trim();
+        showMessage(
+          "formMessage",
+          "Error: " + error.message,
+          "error"
+        );
 
-    const type =
-      document.getElementById("noticeType").value;
+      }
 
-    const notice_date =
-      document.getElementById("noticeDate").value || null;
-
-    const link =
-      document.getElementById("noticeLink").value.trim() || null;
-
-    const active =
-      document.getElementById("noticeActive").checked;
-
-
-    if (!title || !message) {
-
-      showMessage(
-        "formMessage",
-        "Title और Message भरना जरूरी है।",
-        "error"
-      );
-
-      return;
     }
 
 
-    let result;
+    // ==============================
+    // LOAD NOTICES
+    // ==============================
+
+    async function loadNotices() {
+
+      const list =
+        document.getElementById("noticeList");
+
+      list.innerHTML = "Loading notices...";
 
 
-    if (editingId) {
+      try {
 
-      result = await supabaseClient
-        .from("notifications")
-        .update({
-          title: title,
-          message: message,
-          type: type,
-          notice_date: notice_date,
-          link: link,
-          active: active
-        })
-        .eq("id", editingId);
+        const {
+          data,
+          error
+        } = await supabaseClient
+          .from("notifications")
+          .select("*")
+          .order("notice_date", {
+            ascending: false,
+            nullsFirst: false
+          });
 
-    } else {
 
-      result = await supabaseClient
-        .from("notifications")
-        .insert({
-          title: title,
-          message: message,
-          type: type,
-          notice_date: notice_date,
-          link: link,
-          active: active
+        if (error) {
+
+          console.error(error);
+
+          list.innerHTML =
+            "<p style='color:red;'>Error: " +
+            escapeHtml(error.message) +
+            "</p>";
+
+          return;
+        }
+
+
+        if (!data || data.length === 0) {
+
+          list.innerHTML =
+            "<p>Abhi koi notice nahi hai.</p>";
+
+          return;
+        }
+
+
+        list.innerHTML = data.map(notice => {
+
+          const statusClass =
+            notice.active ? "active" : "inactive";
+
+          const statusText =
+            notice.active ? "ACTIVE" : "INACTIVE";
+
+
+          const dateText =
+            notice.notice_date
+              ? notice.notice_date
+              : "No date";
+
+
+          return `
+
+            <div class="notice-item">
+
+              <span class="badge ${statusClass}">
+                ${statusText}
+              </span>
+
+              <h3>
+                ${escapeHtml(notice.title || "")}
+              </h3>
+
+              <p>
+                ${escapeHtml(notice.message || "")}
+              </p>
+
+              <p class="small-text">
+                <strong>Type:</strong>
+                ${escapeHtml(notice.type || "notice")}
+                <br>
+
+                <strong>Date:</strong>
+                ${escapeHtml(dateText)}
+              </p>
+
+              ${
+                notice.link
+                ? `
+                  <p>
+                    <a
+                      href="${escapeHtml(notice.link)}"
+                      target="_blank"
+                    >
+                      🔗 Open Link
+                    </a>
+                  </p>
+                `
+                : ""
+              }
+
+              <div>
+
+                <button
+                  type="button"
+                  class="btn-warning"
+                  onclick="editNotice('${notice.id}')"
+                >
+                  ✏️ Edit
+                </button>
+
+                <button
+                  type="button"
+                  class="btn-primary"
+                  onclick="toggleNotice('${notice.id}', ${notice.active})"
+                >
+                  ${
+                    notice.active
+                    ? "Deactivate"
+                    : "Activate"
+                  }
+                </button>
+
+                <button
+                  type="button"
+                  class="btn-danger"
+                  onclick="deleteNotice('${notice.id}')"
+                >
+                  🗑️ Delete
+                </button>
+
+              </div>
+
+            </div>
+
+          `;
+
+        }).join("");
+
+
+      } catch (error) {
+
+        console.error(error);
+
+        list.innerHTML =
+          "<p style='color:red;'>Error: " +
+          escapeHtml(error.message) +
+          "</p>";
+
+      }
+
+    }
+
+
+    // ==============================
+    // EDIT NOTICE
+    // ==============================
+
+    async function editNotice(id) {
+
+      try {
+
+        const {
+          data,
+          error
+        } = await supabaseClient
+          .from("notifications")
+          .select("*")
+          .eq("id", id)
+          .single();
+
+
+        if (error) {
+
+          alert(error.message);
+          return;
+
+        }
+
+
+        document.getElementById("editId").value =
+          data.id;
+
+        document.getElementById("noticeTitle").value =
+          data.title || "";
+
+        document.getElementById("noticeMessage").value =
+          data.message || "";
+
+        document.getElementById("noticeType").value =
+          data.type || "notice";
+
+        document.getElementById("noticeDate").value =
+          data.notice_date || "";
+
+        document.getElementById("noticeLink").value =
+          data.link || "";
+
+
+        document.getElementById("formTitle").textContent =
+          "✏️ Edit Notice";
+
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
         });
+
+
+      } catch (error) {
+
+        console.error(error);
+
+        alert(error.message);
+
+      }
+
     }
 
 
-    if (result.error) {
+    // ==============================
+    // ACTIVATE / DEACTIVATE
+    // ==============================
 
-      showMessage(
-        "formMessage",
-        "Save failed: " + result.error.message,
-        "error"
-      );
+    async function toggleNotice(id, currentStatus) {
 
-      return;
+      try {
+
+        const {
+          error
+        } = await supabaseClient
+          .from("notifications")
+          .update({
+            active: !currentStatus
+          })
+          .eq("id", id);
+
+
+        if (error) {
+
+          alert(error.message);
+          return;
+
+        }
+
+
+        loadNotices();
+
+
+      } catch (error) {
+
+        console.error(error);
+
+        alert(error.message);
+
+      }
+
     }
 
 
-    showMessage(
-      "formMessage",
-      editingId
-        ? "Notice successfully updated! ✅"
-        : "Notice successfully added! ✅",
-      "success"
-    );
+    // ==============================
+    // DELETE NOTICE
+    // ==============================
+
+    async function deleteNotice(id) {
+
+      const confirmDelete =
+        confirm(
+          "Kya aap is notice ko delete karna chahte hain?"
+        );
 
 
-    clearForm();
-
-    loadNotices();
-  }
-
-
-  // Edit notice
-  async function editNotice(id) {
-
-    const { data, error } = await supabaseClient
-      .from("notifications")
-      .select("*")
-      .eq("id", id)
-      .single();
+      if (!confirmDelete) {
+        return;
+      }
 
 
-    if (error || !data) {
+      try {
 
-      alert(
-        "Notice नहीं मिल सकी: " +
-        (error ? error.message : "")
-      );
+        const {
+          error
+        } = await supabaseClient
+          .from("notifications")
+          .delete()
+          .eq("id", id);
 
-      return;
+
+        if (error) {
+
+          alert(error.message);
+          return;
+
+        }
+
+
+        loadNotices();
+
+
+      } catch (error) {
+
+        console.error(error);
+
+        alert(error.message);
+
+      }
+
     }
 
 
-    editingId = id;
+    // ==============================
+    // RESET FORM
+    // ==============================
+
+    function resetForm() {
+
+      document.getElementById("editId").value = "";
+
+      document.getElementById("noticeTitle").value = "";
+
+      document.getElementById("noticeMessage").value = "";
+
+      document.getElementById("noticeType").value = "notice";
+
+      document.getElementById("noticeDate").value = "";
+
+      document.getElementById("noticeLink").value = "";
+
+      document.getElementById("formTitle").textContent =
+        "➕ Add New Notice";
+
+    }
 
 
-    document.getElementById("noticeTitle").value =
-      data.title || "";
+    // ==============================
+    // SECURITY - HTML ESCAPE
+    // ==============================
 
-    document.getElementById("noticeMessage").value =
-      data.message || "";
+    function escapeHtml(value) {
 
-    document.getElementById("noticeType").value =
-      data.type || "general";
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 
-    document.getElementById("noticeDate").value =
-      data.notice_date || "";
-
-    document.getElementById("noticeLink").value =
-      data.link || "";
-
-    document.getElementById("noticeActive").checked =
-      data.active !== false;
+    }
 
 
-    document.getElementById("formHeading").textContent =
-      "Edit Notice";
+    // ==============================
+    // START
+    // ==============================
 
-    document.getElementById("cancelEditBtn")
-      .classList.remove("hidden");
+    window.addEventListener("load", function() {
 
+      checkLogin();
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
     });
-  }
 
-
-  // Cancel editing
-  function cancelEdit() {
-
-    clearForm();
-  }
-
-
-  function clearForm() {
-
-    editingId = null;
-
-    document.getElementById("noticeTitle").value = "";
-    document.getElementById("noticeMessage").value = "";
-    document.getElementById("noticeType").value = "general";
-    document.getElementById("noticeDate").value = "";
-    document.getElementById("noticeLink").value = "";
-    document.getElementById("noticeActive").checked = true;
-
-    document.getElementById("formHeading").textContent =
-      "Add New Notice";
-
-    document.getElementById("cancelEditBtn")
-      .classList.add("hidden");
-  }
-
-
-  // Activate / Deactivate
-  async function toggleNotice(id, currentStatus) {
-
-    const newStatus = !currentStatus;
-
-    const { error } = await supabaseClient
-      .from("notifications")
-      .update({
-        active: newStatus
-      })
-      .eq("id", id);
-
-
-    if (error) {
-
-      alert(
-        "Status change नहीं हुआ: " +
-        error.message
-      );
-
-      return;
-    }
-
-
-    loadNotices();
-  }
-
-
-  // Delete
-  async function deleteNotice(id) {
-
-    const confirmDelete =
-      confirm(
-        "क्या आप इस notice को permanently delete करना चाहते हैं?"
-      );
-
-    if (!confirmDelete) {
-      return;
-    }
-
-
-    const { error } = await supabaseClient
-      .from("notifications")
-      .delete()
-      .eq("id", id);
-
-
-    if (error) {
-
-      alert(
-        "Delete नहीं हुआ: " +
-        error.message
-      );
-
-      return;
-    }
-
-
-    loadNotices();
-  }
-
-
-  // Start
-  checkLogin();
-
-</script>
+  </script>
 
 </body>
 </html>
