@@ -2004,7 +2004,99 @@ async function loadDynamicNotices(){
 /* =========================
    LOAD NOTICES
 ========================= */
+async function loadDynamicNotices(){
 
+  const box = document.getElementById("dynamicNotices");
+
+  if(!box) return;
+
+  const SUPABASE_URL =
+    "https://rxrundokeksglyigbocv.supabase.co";
+
+  const SUPABASE_KEY =
+    "sb_publishable_-wkRDWu6FloTLy5xsrvvwQ_Qt3sJkfb";
+
+  try{
+
+    const response = await fetch(
+      SUPABASE_URL +
+      "/rest/v1/notifications" +
+      "?select=title,message,type,notice_date,link,active,created_at" +
+      "&active=eq.true" +
+      "&order=created_at.desc",
+      {
+        method: "GET",
+        headers: {
+          "apikey": SUPABASE_KEY,
+          "Authorization": "Bearer " + SUPABASE_KEY
+        }
+      }
+    );
+
+    if(!response.ok){
+      throw new Error("Supabase error: " + response.status);
+    }
+
+    const notices = await response.json();
+
+    box.innerHTML = "";
+
+    if(!notices.length){
+
+      box.innerHTML =
+        '<div class="loading-notice">अभी कोई नया notice नहीं है।</div>';
+
+      return;
+    }
+
+    notices.forEach(function(notice){
+
+      const item = document.createElement("div");
+
+      item.className = "notice-item";
+
+      let html = "";
+
+      html += "<h3>" + (notice.title || "Notice") + "</h3>";
+
+      if(notice.notice_date){
+        html +=
+          '<div class="notice-date">' +
+          notice.notice_date +
+          "</div>";
+      }
+
+      if(notice.message){
+        html += "<p>" + notice.message + "</p>";
+      }
+
+      if(notice.link){
+        html +=
+          '<a href="' +
+          notice.link +
+          '" target="_blank" rel="noopener">' +
+          "View Details" +
+          "</a>";
+      }
+
+      item.innerHTML = html;
+
+      box.appendChild(item);
+
+    });
+
+  }catch(error){
+
+    console.error("Notice loading error:", error);
+
+    box.innerHTML =
+      '<div class="loading-notice">' +
+      "नए notices अभी load नहीं हो पाए।" +
+      "</div>";
+
+  }
+
+}
 document.addEventListener(
   'DOMContentLoaded',
   function(){
