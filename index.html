@@ -3,106 +3,547 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Holy Land Public School | Chhauradano, Bihar</title>
+
 <meta name="description" content="Holy Land Public School, Matar Chowk, Motihari Road, Chhauradano, Bihar. English medium school with Pre-Nursery to Class 8 and residential/hostel facilities.">
+
 <meta name="robots" content="index, follow">
+
 <link rel="canonical" href="https://sunnyraaz8085-arch.github.io/Holy-Land-Public-school-/">
+
 <meta name="theme-color" content="#123b6d">
+
 <meta property="og:title" content="Holy Land Public School | Chhauradano, Bihar">
 <meta property="og:description" content="English medium school, Pre-Nursery to Class 8, with residential/hostel facilities.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sunnyraaz8085-arch.github.io/Holy-Land-Public-school-/">
 
 <style>
-:root{--blue:#123b6d;--blue2:#205d98;--gold:#f4b41a;--cream:#f6f8fb;--ink:#17202a;--white:#fff}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,"Noto Sans Devanagari",sans-serif;color:var(--ink);line-height:1.65;background:#fff}
-a{text-decoration:none;color:inherit}
-.top{background:var(--blue);color:#fff;text-align:center;padding:9px 12px;font-size:14px}
-header{background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 14px #0002}
-.nav{max-width:1150px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;position:relative}
-.logo{display:flex;align-items:center;gap:10px;color:var(--blue);font-weight:800}
-.logo img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
-.logo small{display:block;color:#666;font-weight:500}
-nav{display:flex;gap:17px;align-items:center}
-nav a{font-weight:700;color:var(--blue);font-size:15px}
-nav a:hover{color:#c58a00}
-.menu-toggle{display:none;background:none;border:0;color:var(--blue);font-size:29px;cursor:pointer}
+:root{
+  --blue:#123b6d;
+  --blue2:#205d98;
+  --gold:#f4b41a;
+  --cream:#f6f8fb;
+  --ink:#17202a;
+  --white:#fff
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0
+}
+
+html{
+  scroll-behavior:smooth
+}
+
+body{
+  font-family:Arial,"Noto Sans Devanagari",sans-serif;
+  color:var(--ink);
+  line-height:1.65;
+  background:#fff
+}
+
+a{
+  text-decoration:none;
+  color:inherit
+}
+
+.top{
+  background:var(--blue);
+  color:#fff;
+  text-align:center;
+  padding:9px 12px;
+  font-size:14px
+}
+
+header{
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 14px #0002
+}
+
+.nav{
+  max-width:1150px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 18px;
+  position:relative
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--blue);
+  font-weight:800
+}
+
+.logo img{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--gold)
+}
+
+.logo small{
+  display:block;
+  color:#666;
+  font-weight:500
+}
+
+nav{
+  display:flex;
+  gap:17px;
+  align-items:center
+}
+
+nav a{
+  font-weight:700;
+  color:var(--blue);
+  font-size:15px
+}
+
+nav a:hover{
+  color:#c58a00
+}
+
+.menu-toggle{
+  display:none;
+  background:none;
+  border:0;
+  color:var(--blue);
+  font-size:29px;
+  cursor:pointer
+}
 
 /* Announcement Bar */
-.ticker-wrap{background:#fff3cd;color:#856404;padding:8px 0;overflow:hidden;border-bottom:1px solid #ffeeba;font-size:14px;font-weight:bold}
-.ticker{display:inline-block;white-space:nowrap;padding-left:100%;animation:marquee 25s linear infinite}
-@keyframes marquee{0%{transform:translate(0, 0)}100%{transform:translate(-100%, 0)}}
+.ticker-wrap{
+  background:#fff3cd;
+  color:#856404;
+  padding:8px 0;
+  overflow:hidden;
+  border-bottom:1px solid #ffeeba;
+  font-size:14px;
+  font-weight:bold
+}
 
-.hero{min-height:600px;display:grid;place-items:center;text-align:center;color:#fff;padding:65px 20px;background:linear-gradient(120deg,#123b6deF,#123b6dcc),url("images/hero-school.png") center/cover}
-.hero-content{max-width:900px}
-.badge{display:inline-block;background:#ffffff1f;border:1px solid #fff8;border-radius:999px;padding:7px 15px;margin-bottom:18px}
-.hero h1{font-size:clamp(35px,6vw,68px);line-height:1.05;margin-bottom:12px}
-.hero h2{font-size:clamp(20px,3vw,31px);font-weight:500}
-.hero p{margin:20px auto;max-width:760px;font-size:19px}
-.btn{display:inline-block;background:var(--gold);color:#17202a;padding:12px 21px;border-radius:9px;font-weight:800;margin:6px;cursor:pointer;border:none}
-.btn.alt{background:#fff;color:var(--blue)}
-section{padding:72px 20px}
-.container{max-width:1120px;margin:auto}
-.section-title{text-align:center;color:var(--blue);font-size:34px;margin-bottom:6px}
-.section-sub{text-align:center;color:#666;margin-bottom:36px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:#fff;border-radius:15px;padding:24px;box-shadow:0 5px 24px #123b6d18;border:1px solid #e8eef5}
-.card h3{color:var(--blue);margin-bottom:7px}
-.light{background:var(--cream)}
-.about{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
-.about img{width:100%;height:390px;object-fit:cover;border-radius:17px}
-.quote{background:var(--blue);color:#fff;border-radius:17px;padding:34px;text-align:center}
-.quote h3{color:var(--gold);margin-bottom:10px}
-.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:25px}
-.fact{padding:20px;border-radius:14px;background:#fff;border:1px solid #e4ebf3;text-align:center}
-.fact b{display:block;color:var(--blue);font-size:22px}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.gallery figure{margin:0;cursor:pointer}
-.gallery img{width:100%;height:250px;object-fit:cover;border-radius:13px;display:block;transition:transform 0.2s}
-.gallery img:hover{transform:scale(1.02)}
-.gallery figcaption{padding:8px 3px;color:#555;font-size:14px}
-.notice{border-left:5px solid var(--gold);padding:15px 18px;background:#fff;margin:10px 0;border-radius:8px}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:25px}
-.contact-card{padding:28px;background:var(--cream);border-radius:15px}
-.contact-card a{color:var(--blue);font-weight:700}
-.map-container{margin-top:12px;border-radius:10px;overflow:hidden;border:1px solid #dcdcdc}
+.ticker{
+  display:inline-block;
+  white-space:nowrap;
+  padding-left:100%;
+  animation:marquee 25s linear infinite
+}
+
+@keyframes marquee{
+  0%{transform:translate(0,0)}
+  100%{transform:translate(-100%,0)}
+}
+
+.hero{
+  min-height:600px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  color:#fff;
+  padding:65px 20px;
+  background:
+    linear-gradient(120deg,#123b6deF,#123b6dcc),
+    url("images/hero-school.png") center/cover
+}
+
+.hero-content{
+  max-width:900px
+}
+
+.badge{
+  display:inline-block;
+  background:#ffffff1f;
+  border:1px solid #fff8;
+  border-radius:999px;
+  padding:7px 15px;
+  margin-bottom:18px
+}
+
+.hero h1{
+  font-size:clamp(35px,6vw,68px);
+  line-height:1.05;
+  margin-bottom:12px
+}
+
+.hero h2{
+  font-size:clamp(20px,3vw,31px);
+  font-weight:500
+}
+
+.hero p{
+  margin:20px auto;
+  max-width:760px;
+  font-size:19px
+}
+
+.btn{
+  display:inline-block;
+  background:var(--gold);
+  color:#17202a;
+  padding:12px 21px;
+  border-radius:9px;
+  font-weight:800;
+  margin:6px;
+  cursor:pointer;
+  border:none
+}
+
+.btn.alt{
+  background:#fff;
+  color:var(--blue)
+}
+
+section{
+  padding:72px 20px
+}
+
+.container{
+  max-width:1120px;
+  margin:auto
+}
+
+.section-title{
+  text-align:center;
+  color:var(--blue);
+  font-size:34px;
+  margin-bottom:6px
+}
+
+.section-sub{
+  text-align:center;
+  color:#666;
+  margin-bottom:36px
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px
+}
+
+.card{
+  background:#fff;
+  border-radius:15px;
+  padding:24px;
+  box-shadow:0 5px 24px #123b6d18;
+  border:1px solid #e8eef5
+}
+
+.card h3{
+  color:var(--blue);
+  margin-bottom:7px
+}
+
+.light{
+  background:var(--cream)
+}
+
+.about{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:35px;
+  align-items:center
+}
+
+.about img{
+  width:100%;
+  height:390px;
+  object-fit:cover;
+  border-radius:17px
+}
+
+.quote{
+  background:var(--blue);
+  color:#fff;
+  border-radius:17px;
+  padding:34px;
+  text-align:center
+}
+
+.quote h3{
+  color:var(--gold);
+  margin-bottom:10px
+}
+
+.facts{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:25px
+}
+
+.fact{
+  padding:20px;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid #e4ebf3;
+  text-align:center
+}
+
+.fact b{
+  display:block;
+  color:var(--blue);
+  font-size:22px
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px
+}
+
+.gallery figure{
+  margin:0;
+  cursor:pointer
+}
+
+.gallery img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:13px;
+  display:block;
+  transition:transform 0.2s
+}
+
+.gallery img:hover{
+  transform:scale(1.02)
+}
+
+.gallery figcaption{
+  padding:8px 3px;
+  color:#555;
+  font-size:14px
+}
+
+/* Notice */
+.notice{
+  border-left:5px solid var(--gold);
+  padding:15px 18px;
+  background:#fff;
+  margin:10px 0;
+  border-radius:8px;
+  box-shadow:0 2px 8px #123b6d10
+}
+
+.dynamic-notice{
+  border-left-color:var(--blue2);
+}
+
+.notice-date{
+  display:block;
+  margin-top:6px;
+  font-size:13px;
+  color:#777
+}
+
+.contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px
+}
+
+.contact-card{
+  padding:28px;
+  background:var(--cream);
+  border-radius:15px
+}
+
+.contact-card a{
+  color:var(--blue);
+  font-weight:700
+}
+
+.map-container{
+  margin-top:12px;
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid #dcdcdc
+}
 
 /* Floating Actions */
-.floating-actions{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:12px;z-index:999}
-.float-btn{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:transform 0.2s}
-.float-btn:hover{transform:scale(1.1)}
-.float-wa{background:#25d366}
-.float-call{background:#123b6d}
+.floating-actions{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:999
+}
+
+.float-btn{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:22px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  transition:transform 0.2s
+}
+
+.float-btn:hover{
+  transform:scale(1.1)
+}
+
+.float-wa{
+  background:#25d366
+}
+
+.float-call{
+  background:#123b6d
+}
 
 /* Inquiry Form */
-.inquiry-box{margin-top:35px;background:#fff;padding:25px;border-radius:15px;box-shadow:0 4px 18px rgba(0,0,0,0.06);border:1px solid #dbe4ee}
-.form-group{margin-bottom:12px}
-.form-group input, .form-group select{width:100%;padding:11px;border-radius:8px;border:1px solid #ccc;font-size:15px;font-family:inherit}
+.inquiry-box{
+  margin-top:35px;
+  background:#fff;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 4px 18px rgba(0,0,0,0.06);
+  border:1px solid #dbe4ee
+}
 
-/* Image Lightbox Modal */
-.image-modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.85);justify-content:center;align-items:center}
-.image-modal img{max-width:90%;max-height:85%;border-radius:8px}
-.image-modal-close{position:absolute;top:20px;right:30px;color:#fff;font-size:35px;font-weight:bold;cursor:pointer}
+.form-group{
+  margin-bottom:12px
+}
 
-footer{background:#0c294b;color:#fff;text-align:center;padding:30px 20px}
-footer strong{color:var(--gold)}
-.small{font-size:13px;color:#777}
+.form-group input,
+.form-group select{
+  width:100%;
+  padding:11px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:15px;
+  font-family:inherit
+}
+
+/* Image Lightbox */
+.image-modal{
+  display:none;
+  position:fixed;
+  z-index:1000;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center
+}
+
+.image-modal img{
+  max-width:90%;
+  max-height:85%;
+  border-radius:8px
+}
+
+.image-modal-close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  color:#fff;
+  font-size:35px;
+  font-weight:bold;
+  cursor:pointer
+}
+
+footer{
+  background:#0c294b;
+  color:#fff;
+  text-align:center;
+  padding:30px 20px
+}
+
+footer strong{
+  color:var(--gold)
+}
+
+.small{
+  font-size:13px;
+  color:#777
+}
+
+.loading-notice{
+  text-align:center;
+  padding:10px;
+  color:#777;
+  font-size:14px
+}
 
 @media(max-width:850px){
- nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;padding:14px 20px;box-shadow:0 10px 20px #0002;flex-direction:column;align-items:flex-start}
- nav.open{display:flex}
- .menu-toggle{display:block}
- .grid,.about,.contact{grid-template-columns:1fr}
- .facts{grid-template-columns:1fr 1fr}
- .gallery{grid-template-columns:1fr 1fr}
- .hero{min-height:540px}
+
+  nav{
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    top:100%;
+    background:#fff;
+    padding:14px 20px;
+    box-shadow:0 10px 20px #0002;
+    flex-direction:column;
+    align-items:flex-start
+  }
+
+  nav.open{
+    display:flex
+  }
+
+  .menu-toggle{
+    display:block
+  }
+
+  .grid,
+  .about,
+  .contact{
+    grid-template-columns:1fr
+  }
+
+  .facts{
+    grid-template-columns:1fr 1fr
+  }
+
+  .gallery{
+    grid-template-columns:1fr 1fr
+  }
+
+  .hero{
+    min-height:540px
+  }
 }
+
 @media(max-width:500px){
- .facts,.gallery{grid-template-columns:1fr}
- .logo{font-size:13px}
- .logo img{width:45px;height:45px}
+
+  .facts,
+  .gallery{
+    grid-template-columns:1fr
+  }
+
+  .logo{
+    font-size:13px
+  }
+
+  .logo img{
+    width:45px;
+    height:45px
+  }
 }
 </style>
 
@@ -125,19 +566,42 @@ footer strong{color:var(--gold)}
 </head>
 
 <body>
-<div class="top">📞 <a href="tel:9097555827">9097555827</a> &nbsp; | &nbsp; <a href="tel:8789984322">8789984322</a> &nbsp; | &nbsp; 📍 Chhauradano, Bihar</div>
+
+<div class="top">
+📞 <a href="tel:9097555827">9097555827</a>
+&nbsp; | &nbsp;
+<a href="tel:8789984322">8789984322</a>
+&nbsp; | &nbsp;
+📍 Chhauradano, Bihar
+</div>
 
 <div class="ticker-wrap">
-  <div class="ticker">📢 Admission Open for Academic Session 2026–27 (Pre-Nursery to Class 8) • Hostel / Residential Facility Available • For Details Call: 9097555827</div>
+  <div class="ticker">
+    📢 Admission Open for Academic Session 2026–27
+    (Pre-Nursery to Class 8) • Hostel / Residential Facility Available
+    • For Details Call: 9097555827
+  </div>
 </div>
 
 <header>
 <div class="nav">
+
 <a href="#home" class="logo">
 <img src="images/school-logo.jpg" alt="Holy Land Public School logo">
-<div>HOLY LAND PUBLIC SCHOOL<small>ज्ञान • अनुशासन • संस्कार</small></div>
+
+<div>
+HOLY LAND PUBLIC SCHOOL
+<small>ज्ञान • अनुशासन • संस्कार</small>
+</div>
 </a>
-<button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+<button
+  class="menu-toggle"
+  aria-label="Open menu"
+  aria-expanded="false">
+  ☰
+</button>
+
 <nav>
 <a href="#home">Home</a>
 <a href="#about">About</a>
@@ -148,234 +612,904 @@ footer strong{color:var(--gold)}
 <a href="#notice">Notice</a>
 <a href="#contact">Contact</a>
 </nav>
+
 </div>
 </header>
 
 <section id="home" class="hero">
 <div class="hero-content">
-<div class="badge">ESTD. 2014 • UDISE No. 10020601906</div>
+
+<div class="badge">
+ESTD. 2014 • UDISE No. 10020601906
+</div>
+
 <h1>HOLY LAND PUBLIC SCHOOL</h1>
+
 <h2>होली लैंड पब्लिक स्कूल</h2>
-<p>“Education for a brighter and better future.”<br>“उज्ज्वल एवं बेहतर भविष्य के लिए गुणवत्तापूर्ण शिक्षा।”</p>
-<a class="btn" href="#admission">Admission / प्रवेश</a>
-<a class="btn alt" href="#contact">Contact Us / संपर्क करें</a>
+
+<p>
+“Education for a brighter and better future.”
+<br>
+“उज्ज्वल एवं बेहतर भविष्य के लिए गुणवत्तापूर्ण शिक्षा।”
+</p>
+
+<a class="btn" href="#admission">
+Admission / प्रवेश
+</a>
+
+<a class="btn alt" href="#contact">
+Contact Us / संपर्क करें
+</a>
+
 </div>
 </section>
 
 <section>
 <div class="container">
-<h2 class="section-title">School at a Glance</h2>
-<p class="section-sub">विद्यालय की मुख्य जानकारी</p>
+
+<h2 class="section-title">
+School at a Glance
+</h2>
+
+<p class="section-sub">
+विद्यालय की मुख्य जानकारी
+</p>
+
 <div class="facts">
-<div class="fact"><b>2014</b>स्थापना वर्ष</div>
-<div class="fact"><b>Pre-Nursery–8</b>कक्षाएँ</div>
-<div class="fact"><b>English Medium</b>CBSE Pattern</div>
-<div class="fact"><b>Residential</b>Hostel Facility</div>
+
+<div class="fact">
+<b>2014</b>
+स्थापना वर्ष
+</div>
+
+<div class="fact">
+<b>Pre-Nursery–8</b>
+कक्षाएँ
+</div>
+
+<div class="fact">
+<b>English Medium</b>
+CBSE Pattern
+</div>
+
+<div class="fact">
+<b>Residential</b>
+Hostel Facility
+</div>
+
 </div>
 </div>
 </section>
 
 <section id="about" class="light">
 <div class="container">
-<h2 class="section-title">About Our School</h2>
-<p class="section-sub">हमारे विद्यालय के बारे में</p>
+
+<h2 class="section-title">
+About Our School
+</h2>
+
+<p class="section-sub">
+हमारे विद्यालय के बारे में
+</p>
+
 <div class="about">
+
 <div>
+
 <h3>HOLY LAND PUBLIC SCHOOL</h3>
-<p>HOLY LAND PUBLIC SCHOOL विद्यार्थियों को गुणवत्तापूर्ण शिक्षा, अनुशासन, अच्छे संस्कार और आत्मविश्वास के साथ आगे बढ़ने के लिए प्रेरित करने के उद्देश्य से समर्पित है।</p>
+
+<p>
+HOLY LAND PUBLIC SCHOOL विद्यार्थियों को गुणवत्तापूर्ण शिक्षा,
+अनुशासन, अच्छे संस्कार और आत्मविश्वास के साथ आगे बढ़ने के लिए
+प्रेरित करने के उद्देश्य से समर्पित है।
+</p>
+
 <br>
-<p>यह विद्यालय English Medium में Pre-Nursery से Class 8 तक की शिक्षा प्रदान करने की जानकारी अपने परिसर के प्रदर्शित विवरण में देता है। विद्यालय के प्रदर्शित विवरण में Residential/Hostel सुविधा का भी उल्लेख है।</p>
+
+<p>
+यह विद्यालय English Medium में Pre-Nursery से Class 8 तक की शिक्षा
+प्रदान करने की जानकारी अपने परिसर के प्रदर्शित विवरण में देता है।
+विद्यालय के प्रदर्शित विवरण में Residential/Hostel सुविधा का भी
+उल्लेख है।
+</p>
+
 <br>
-<p class="small">नोट: वेबसाइट पर वही सुविधाएँ और दावे रखें जिन्हें विद्यालय आधिकारिक रूप से सत्यापित करता है।</p>
+
+<p class="small">
+नोट: वेबसाइट पर वही सुविधाएँ और दावे रखें जिन्हें विद्यालय
+आधिकारिक रूप से सत्यापित करता है।
+</p>
+
 </div>
-<img src="images/school-front.jpg" alt="Holy Land Public School building" loading="lazy">
+
+<img
+src="images/school-front.jpg"
+alt="Holy Land Public School building"
+loading="lazy">
+
 </div>
 </div>
 </section>
 
 <section id="facilities">
 <div class="container">
-<h2 class="section-title">Campus & Facilities</h2>
-<p class="section-sub">विद्यालय परिसर एवं उपलब्ध सुविधाएँ</p>
+
+<h2 class="section-title">
+Campus & Facilities
+</h2>
+
+<p class="section-sub">
+विद्यालय परिसर एवं उपलब्ध सुविधाएँ
+</p>
+
 <div class="grid">
-<div class="card"><h3>🏫 Peaceful Campus</h3><p>शांत और सुरक्षित वातावरण में अध्ययन के लिए अनुकूल भवन।</p></div>
-<div class="card"><h3>📚 Spacious Classrooms</h3><p>हवादार और प्रकाशयुक्त कक्षाएँ ताकि बच्चों की पढ़ाई बेहतर हो सके।</p></div>
-<div class="card"><h3>🏠 Residential / Hostel</h3><p>दूर-दराज के छात्रों के लिए सुरक्षित एवं अनुशासित छात्रावास सुविधा।</p></div>
-<div class="card"><h3>🚌 Transport Facility</h3><p>आस-पास के क्षेत्रों से बच्चों के आवागमन हेतु स्कूल वाहन की सुविधा।</p></div>
-<div class="card"><h3>🎯 Play Area & Sports</h3><p>बच्चों के शारीरिक विकास हेतु खेलकूद और एक्टिविटी स्पेस।</p></div>
-<div class="card"><h3>👨‍🏫 Dedicated Faculty</h3><p>अनुभवी और समर्पित शिक्षकों द्वारा व्यक्तिगत मार्गदर्शन।</p></div>
+
+<div class="card">
+<h3>🏫 Peaceful Campus</h3>
+<p>
+शांत और सुरक्षित वातावरण में अध्ययन के लिए अनुकूल भवन।
+</p>
+</div>
+
+<div class="card">
+<h3>📚 Spacious Classrooms</h3>
+<p>
+हवादार और प्रकाशयुक्त कक्षाएँ ताकि बच्चों की पढ़ाई बेहतर हो सके।
+</p>
+</div>
+
+<div class="card">
+<h3>🏠 Residential / Hostel</h3>
+<p>
+दूर-दराज के छात्रों के लिए सुरक्षित एवं अनुशासित छात्रावास सुविधा।
+</p>
+</div>
+
+<div class="card">
+<h3>🚌 Transport Facility</h3>
+<p>
+आस-पास के क्षेत्रों से बच्चों के आवागमन हेतु स्कूल वाहन की सुविधा।
+</p>
+</div>
+
+<div class="card">
+<h3>🎯 Play Area & Sports</h3>
+<p>
+बच्चों के शारीरिक विकास हेतु खेलकूद और एक्टिविटी स्पेस।
+</p>
+</div>
+
+<div class="card">
+<h3>👨‍🏫 Dedicated Faculty</h3>
+<p>
+अनुभवी और समर्पित शिक्षकों द्वारा व्यक्तिगत मार्गदर्शन।
+</p>
+</div>
+
 </div>
 </div>
 </section>
 
 <section id="principal" class="light">
 <div class="container">
-<h2 class="section-title">Principal's Message</h2>
-<p class="section-sub">प्रधानाचार्य का संदेश</p>
+
+<h2 class="section-title">
+Principal's Message
+</h2>
+
+<p class="section-sub">
+प्रधानाचार्य का संदेश
+</p>
+
 <div class="quote">
-<h3>Welcome to HOLY LAND PUBLIC SCHOOL</h3>
-<p>“हमारा उद्देश्य प्रत्येक विद्यार्थी को सीखने, सोचने और अपने सपनों को पूरा करने का अवसर देना है। हम शिक्षा के साथ-साथ अनुशासन, नैतिक मूल्यों और जिम्मेदारी की भावना विकसित करने में विश्वास रखते हैं।”</p>
+
+<h3>
+Welcome to HOLY LAND PUBLIC SCHOOL
+</h3>
+
+<p>
+“हमारा उद्देश्य प्रत्येक विद्यार्थी को सीखने, सोचने और अपने सपनों
+को पूरा करने का अवसर देना है। हम शिक्षा के साथ-साथ अनुशासन,
+नैतिक मूल्यों और जिम्मेदारी की भावना विकसित करने में विश्वास रखते हैं।”
+</p>
+
 <br>
-<p><i>“Our goal is to help every student learn, think independently and grow into a responsible and confident individual.”</i></p>
+
+<p>
+<i>
+“Our goal is to help every student learn, think independently and
+grow into a responsible and confident individual.”
+</i>
+</p>
+
 </div>
 </div>
 </section>
 
 <section id="admission">
 <div class="container">
-<h2 class="section-title">Admission / प्रवेश</h2>
-<p class="section-sub">प्रवेश संबंधी जानकारी एवं ऑनलाइन फॉर्म</p>
+
+<h2 class="section-title">
+Admission / प्रवेश
+</h2>
+
+<p class="section-sub">
+प्रवेश संबंधी जानकारी एवं ऑनलाइन फॉर्म
+</p>
+
 <div class="grid">
-<div class="card"><h3>Classes Offered</h3><p>Pre-Nursery से Class 8 तक — परिसर पर प्रदर्शित जानकारी के अनुसार।</p></div>
-<div class="card"><h3>Curriculum</h3><p>English Medium School (CBSE Pattern par aadharit pathyakram).</p></div>
-<div class="card"><h3>Admission Helpdesk</h3><p>प्रवेश शुल्क और आवश्यक दस्तावेजों की जानकारी के लिए कॉल करें:</p><a class="btn" href="tel:9097555827">📞 9097555827</a></div>
+
+<div class="card">
+<h3>Classes Offered</h3>
+<p>
+Pre-Nursery से Class 8 तक — परिसर पर प्रदर्शित जानकारी के अनुसार।
+</p>
+</div>
+
+<div class="card">
+<h3>Curriculum</h3>
+<p>
+English Medium School (CBSE Pattern par aadharit pathyakram).
+</p>
+</div>
+
+<div class="card">
+<h3>Admission Helpdesk</h3>
+
+<p>
+प्रवेश शुल्क और आवश्यक दस्तावेजों की जानकारी के लिए कॉल करें:
+</p>
+
+<a class="btn" href="tel:9097555827">
+📞 9097555827
+</a>
+
+</div>
+
 </div>
 
 <div class="inquiry-box">
-  <h3 style="color:var(--blue); margin-bottom:15px; text-align:center;">📝 Quick Admission Inquiry Form</h3>
-  <form onsubmit="handleInquiry(event)">
-    <div class="form-group">
-      <input type="text" id="pName" placeholder="Parent / Guardian Name (अभिभावक का नाम)" required>
-    </div>
-    <div class="form-group">
-      <input type="text" id="sName" placeholder="Student Name (छात्र/छात्रा का नाम)" required>
-    </div>
-    <div class="form-group">
-      <input type="tel" id="pPhone" placeholder="Mobile Number (मोबाइल नंबर)" pattern="[0-9]{10}" required>
-    </div>
-    <div class="form-group">
-      <select id="pClass" required>
-        <option value="">-- Select Class for Admission --</option>
-        <option value="Pre-Nursery / Nursery">Pre-Nursery / Nursery</option>
-        <option value="LKG / UKG">LKG / UKG</option>
-        <option value="Class 1 to 5">Class 1 to 5</option>
-        <option value="Class 6 to 8">Class 6 to 8</option>
-        <option value="Hostel / Residential Admission">Hostel / Residential Admission</option>
-      </select>
-    </div>
-    <div style="text-align:center; margin-top:15px;">
-      <button type="submit" class="btn">Send Inquiry via WhatsApp 💬</button>
-    </div>
-  </form>
+
+<h3 style="color:var(--blue);margin-bottom:15px;text-align:center;">
+📝 Quick Admission Inquiry Form
+</h3>
+
+<form onsubmit="handleInquiry(event)">
+
+<div class="form-group">
+<input
+type="text"
+id="pName"
+placeholder="Parent / Guardian Name (अभिभावक का नाम)"
+required>
+</div>
+
+<div class="form-group">
+<input
+type="text"
+id="sName"
+placeholder="Student Name (छात्र/छात्रा का नाम)"
+required>
+</div>
+
+<div class="form-group">
+<input
+type="tel"
+id="pPhone"
+placeholder="Mobile Number (मोबाइल नंबर)"
+pattern="[0-9]{10}"
+required>
+</div>
+
+<div class="form-group">
+
+<select id="pClass" required>
+
+<option value="">
+-- Select Class for Admission --
+</option>
+
+<option value="Pre-Nursery / Nursery">
+Pre-Nursery / Nursery
+</option>
+
+<option value="LKG / UKG">
+LKG / UKG
+</option>
+
+<option value="Class 1 to 5">
+Class 1 to 5
+</option>
+
+<option value="Class 6 to 8">
+Class 6 to 8
+</option>
+
+<option value="Hostel / Residential Admission">
+Hostel / Residential Admission
+</option>
+
+</select>
+
+</div>
+
+<div style="text-align:center;margin-top:15px;">
+
+<button type="submit" class="btn">
+Send Inquiry via WhatsApp 💬
+</button>
+
+</div>
+
+</form>
 </div>
 </div>
 </section>
 
+<!-- NOTICE BOARD -->
+
 <section id="notice" class="light">
+
 <div class="container">
-<h2 class="section-title">Notice Board</h2>
-<p class="section-sub">सूचना पट्ट</p>
-<div class="notice">📢 <strong>Admission Open:</strong> शैक्षणिक सत्र 2026–27 के लिए नए नामांकन प्रारंभ हैं। संपर्क कार्यालय खुला है।</div>
-<div class="notice">📢 <strong>Hostel Facility:</strong> बाहर के विद्यार्थियों के लिए छात्रावास में सीमित सीटें उपलब्ध हैं।</div>
-<div class="notice">📢 <strong>Office Timing:</strong> स्कूल कार्यालय में किसी भी कार्य हेतु सुबह 9:00 बजे से दोपहर 2:00 बजे तक संपर्क करें।</div>
+
+<h2 class="section-title">
+Notice Board
+</h2>
+
+<p class="section-sub">
+सूचना पट्ट
+</p>
+
+<!-- पुराने 3 notices हमेशा रहेंगे -->
+
+<div class="notice">
+📢 <strong>Admission Open:</strong>
+शैक्षणिक सत्र 2026–27 के लिए नए नामांकन प्रारंभ हैं।
+संपर्क कार्यालय खुला है।
+</div>
+
+<div class="notice">
+📢 <strong>Hostel Facility:</strong>
+बाहर के विद्यार्थियों के लिए छात्रावास में सीमित सीटें उपलब्ध हैं।
+</div>
+
+<div class="notice">
+📢 <strong>Office Timing:</strong>
+स्कूल कार्यालय में किसी भी कार्य हेतु सुबह 9:00 बजे से
+दोपहर 2:00 बजे तक संपर्क करें।
+</div>
+
+<!-- नए Supabase notices यहाँ जुड़ेंगे -->
+
+<div id="dynamicNotices">
+
+<div class="loading-notice">
+नए notices check किए जा रहे हैं...
+</div>
+
+</div>
+
 </div>
 </section>
 
 <section id="gallery">
+
 <div class="container">
-<h2 class="section-title">School Gallery</h2>
-<p class="section-sub">विद्यालय की वास्तविक तस्वीरें (बड़ा देखने के लिए फोटो पर क्लिक करें)</p>
+
+<h2 class="section-title">
+School Gallery
+</h2>
+
+<p class="section-sub">
+विद्यालय की वास्तविक तस्वीरें
+(बड़ा देखने के लिए फोटो पर क्लिक करें)
+</p>
+
 <div class="gallery">
-<figure onclick="openModal(this)"><img src="images/hero-school.png" alt="Holy Land Public School campus" loading="lazy"><figcaption>विद्यालय परिसर</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/building.jpg" alt="Holy Land Public School building" loading="lazy"><figcaption>विद्यालय भवन</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/classroom.jpg" alt="Holy Land Public School classroom" loading="lazy"><figcaption>कक्षा कक्ष</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/corridor.jpg" alt="School corridor" loading="lazy"><figcaption>विद्यालय कॉरिडोर</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/office.jpg" alt="School office" loading="lazy"><figcaption>कार्यालय</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/play-area.jpg" alt="School play area" loading="lazy"><figcaption>खेल/गतिविधि क्षेत्र</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/admission-board.jpg" alt="School admission board" loading="lazy"><figcaption>Admission जानकारी</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/residential-board.jpg" alt="Residential school information board" loading="lazy"><figcaption>Residential जानकारी</figcaption></figure>
-<figure onclick="openModal(this)"><img src="images/school-transport.jpg" alt="School transport vehicle" loading="lazy"><figcaption>School transport</figcaption></figure>
+
+<figure onclick="openModal(this)">
+<img src="images/hero-school.png"
+alt="Holy Land Public School campus"
+loading="lazy">
+<figcaption>विद्यालय परिसर</figcaption>
+</figure>
+
+<figure onclick="openModal(this)">
+<img src="images/building.jpg"
+alt="Holy Land Public School building"
+loading="lazy">
+<figcaption>विद्यालय भवन</figcaption>
+</figure>
+
+<figure onclick="openModal(this)">
+<img src="images/classroom.jpg"
+alt="Holy Land Public School classroom"
+loading="lazy">
+<figcaption>कक्षा कक्ष</figcaption>
+</figure>
+
+<figure onclick="openModal(this)">
+<img src="images/corridor.jpg"
+alt="School corridor"
+loading="lazy">
+<figcaption>विद्यालय कॉरिडोर</figcaption>
+</figure>
+
+<figure onclick="openModal(this)">
+<img src="images/office.jpg"
+alt="School office"
+loading="lazy">
+<figcaption>कार्यालय</figcaption>
+</figure>
+
+<figure onclick="openModal(this)">
+<img src="images/play-area.jpg"
+alt="School play area"
+loading="lazy">
+<figcaption>खेल/गतिविधि क्षेत्र</figcaption>
+</figure>
+
+<figure onclick="openModal(this)">
+<img src="images/admission-board.jpg"
+alt="School admission board"
+loading="lazy">
+<figcaption>Admission जानकारी</figcaption>
+</figure>
+
+<figure onclick="openModal(this)">
+<img src="images/residential-board.jpg"
+alt="Residential school information board"
+loading="lazy">
+<figcaption>Residential जानकारी</figcaption>
+</figure>
+
+<figure onclick="openModal(this)">
+<img src="images/school-transport.jpg"
+alt="School transport vehicle"
+loading="lazy">
+<figcaption>School transport</figcaption>
+</figure>
+
 </div>
 </div>
 </section>
 
-<!-- Lightbox Popup Container -->
-<div id="imageModal" class="image-modal" onclick="closeModal()">
-  <span class="image-modal-close">&times;</span>
-  <img id="modalImg" src="" alt="Full view">
+<!-- Lightbox -->
+
+<div
+id="imageModal"
+class="image-modal"
+onclick="closeModal()">
+
+<span class="image-modal-close">
+&times;
+</span>
+
+<img
+id="modalImg"
+src=""
+alt="Full view">
+
 </div>
 
 <section id="contact" class="light">
+
 <div class="container">
-<h2 class="section-title">Contact Us</h2>
-<p class="section-sub">हमसे संपर्क करें</p>
+
+<h2 class="section-title">
+Contact Us
+</h2>
+
+<p class="section-sub">
+हमसे संपर्क करें
+</p>
+
 <div class="contact">
+
 <div class="contact-card">
+
 <h3>📍 School Address</h3>
-<p>Matar Chowk, Motihari Road, Chhauradano, Bihar - 845302</p><br>
-<h3>📞 Phone Helpline</h3>
-<p><a href="tel:9097555827">9097555827</a><br><a href="tel:8789984322">8789984322</a></p>
+
+<p>
+Matar Chowk, Motihari Road,
+Chhauradano, Bihar - 845302
+</p>
+
 <br>
-<a class="btn" href="https://wa.me/919097555827?text=Namaste%20Holy%20Land%20Public%20School%2C%20mujhe%20admission%20ki%20jaankari%20chahiye." target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+
+<h3>📞 Phone Helpline</h3>
+
+<p>
+<a href="tel:9097555827">
+9097555827
+</a>
+<br>
+<a href="tel:8789984322">
+8789984322
+</a>
+</p>
+
+<br>
+
+<a
+class="btn"
+href="https://wa.me/919097555827?text=Namaste%20Holy%20Land%20Public%20School%2C%20mujhe%20admission%20ki%20jaankari%20chahiye."
+target="_blank"
+rel="noopener">
+
+💬 Chat on WhatsApp
+
+</a>
+
 </div>
+
 <div class="contact-card">
+
 <h3>📌 Location Map</h3>
-<p>Matar Chowk, Motihari Road, Chhauradano, Bihar</p>
+
+<p>
+Matar Chowk, Motihari Road, Chhauradano, Bihar
+</p>
+
 <div class="map-container">
-  <iframe 
-    src="https://maps.google.com/maps?q=Holy+Land+Public+School+Chhauradano+Bihar&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-    width="100%" 
-    height="240" 
-    style="border:0; display:block;" 
-    allowfullscreen="" 
-    loading="lazy">
-  </iframe>
+
+<iframe
+src="https://maps.google.com/maps?q=Holy+Land+Public+School+Chhauradano+Bihar&t=&z=15&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="240"
+style="border:0;display:block;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
 </div>
+
 <div style="margin-top:14px;">
-  <a class="btn" href="https://maps.app.goo.gl/mAdDjm5gc8H9Tiwp7" target="_blank" rel="noopener" style="display:inline-block; font-size:14px; padding:10px 16px;">
-    📍 Open Exact Location in Google Maps
-  </a>
+
+<a
+class="btn"
+href="https://maps.app.goo.gl/mAdDjm5gc8H9Tiwp7"
+target="_blank"
+rel="noopener"
+style="display:inline-block;font-size:14px;padding:10px 16px;">
+
+📍 Open Exact Location in Google Maps
+
+</a>
+
 </div>
+
 </div>
+
 </div>
 </div>
 </section>
 
-<!-- Floating WhatsApp & Call Buttons -->
+<!-- Floating buttons -->
+
 <div class="floating-actions">
-  <a href="https://wa.me/919097555827?text=Namaste%20Holy%20Land%20Public%20School%2C%20mujhe%20admission%20ki%20jaankari%20chahiye." class="float-btn float-wa" target="_blank" title="WhatsApp Chat" rel="noopener">💬</a>
-  <a href="tel:9097555827" class="float-btn float-call" title="Call School">📞</a>
+
+<a
+href="https://wa.me/919097555827?text=Namaste%20Holy%20Land%20Public%20School%2C%20mujhe%20admission%20ki%20jaankari%20chahiye."
+class="float-btn float-wa"
+target="_blank"
+title="WhatsApp Chat"
+rel="noopener">
+
+💬
+
+</a>
+
+<a
+href="tel:9097555827"
+class="float-btn float-call"
+title="Call School">
+
+📞
+
+</a>
+
 </div>
 
 <footer>
-<p><strong>HOLY LAND PUBLIC SCHOOL</strong></p>
-<p>Matar Chowk, Motihari Road, Chhauradano, Bihar</p>
-<p>📞 9097555827 &nbsp; | &nbsp; 8789984322</p>
-<p>© 2026 HOLY LAND PUBLIC SCHOOL. All Rights Reserved.</p>
+
+<p>
+<strong>HOLY LAND PUBLIC SCHOOL</strong>
+</p>
+
+<p>
+Matar Chowk, Motihari Road, Chhauradano, Bihar
+</p>
+
+<p>
+📞 9097555827 &nbsp; | &nbsp; 8789984322
+</p>
+
+<p>
+© 2026 HOLY LAND PUBLIC SCHOOL. All Rights Reserved.
+</p>
+
 </footer>
 
 <script>
+
+/* Mobile Menu */
+
 const menu = document.querySelector('.menu-toggle');
 const nav = document.querySelector('nav');
+
 menu.addEventListener('click', () => {
+
   const open = nav.classList.toggle('open');
-  menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+
+  menu.setAttribute(
+    'aria-expanded',
+    open ? 'true' : 'false'
+  );
+
 });
-document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => {
-  nav.classList.remove('open');
-  menu.setAttribute('aria-expanded','false');
-}));
+
+document.querySelectorAll('nav a').forEach(a => {
+
+  a.addEventListener('click', () => {
+
+    nav.classList.remove('open');
+
+    menu.setAttribute(
+      'aria-expanded',
+      'false'
+    );
+
+  });
+
+});
+
+
+/* Admission Inquiry */
 
 function handleInquiry(e) {
+
   e.preventDefault();
-  const parent = document.getElementById('pName').value.trim();
-  const student = document.getElementById('sName').value.trim();
-  const phone = document.getElementById('pPhone').value.trim();
-  const selectedClass = document.getElementById('pClass').value;
-  
-  const msg = `*New Admission Inquiry - Holy Land Public School*\n\n*Parent Name:* ${parent}\n*Student Name:* ${student}\n*Phone:* ${phone}\n*Class:* ${selectedClass}`;
-  window.open(`https://wa.me/919097555827?text=${encodeURIComponent(msg)}`, '_blank');
+
+  const parent =
+    document.getElementById('pName').value.trim();
+
+  const student =
+    document.getElementById('sName').value.trim();
+
+  const phone =
+    document.getElementById('pPhone').value.trim();
+
+  const selectedClass =
+    document.getElementById('pClass').value;
+
+  const msg =
+`*New Admission Inquiry - Holy Land Public School*
+
+*Parent Name:* ${parent}
+
+*Student Name:* ${student}
+
+*Phone:* ${phone}
+
+*Class:* ${selectedClass}`;
+
+  window.open(
+    `https://wa.me/919097555827?text=${encodeURIComponent(msg)}`,
+    '_blank'
+  );
+
 }
+
+
+/* Image Modal */
 
 function openModal(el) {
-  const imgSrc = el.querySelector('img').src;
-  document.getElementById('modalImg').src = imgSrc;
-  document.getElementById('imageModal').style.display = 'flex';
+
+  const imgSrc =
+    el.querySelector('img').src;
+
+  document.getElementById('modalImg').src =
+    imgSrc;
+
+  document.getElementById('imageModal').style.display =
+    'flex';
+
 }
 
+
 function closeModal() {
-  document.getElementById('imageModal').style.display = 'none';
+
+  document.getElementById('imageModal').style.display =
+    'none';
+
 }
+
+
+/* =====================================================
+   SUPABASE DYNAMIC NOTICE BOARD
+   ===================================================== */
+
+async function loadDynamicNotices() {
+
+  const noticeBox =
+    document.getElementById('dynamicNotices');
+
+  if (!noticeBox) {
+    return;
+  }
+
+  const SUPABASE_URL =
+    "https://rxrundokeksglyigbocv.supabase.co";
+
+  const SUPABASE_KEY =
+    "sb_publishable_-wkRDWu6FloTLy5xsrvvwQ_Qt3sJkfb";
+
+  try {
+
+    const response = await fetch(
+
+      SUPABASE_URL +
+      "/rest/v1/notifications" +
+      "?select=title,message,type,notice_date,link,active,created_at" +
+      "&active=eq.true" +
+      "&order=notice_date.desc.nullslast,created_at.desc",
+
+      {
+        method:"GET",
+
+        headers:{
+          "apikey":SUPABASE_KEY,
+          "Authorization":
+            "Bearer " + SUPABASE_KEY
+        }
+      }
+
+    );
+
+
+    if (!response.ok) {
+
+      console.log(
+        "Supabase notice error:",
+        response.status
+      );
+
+      noticeBox.innerHTML = "";
+
+      return;
+    }
+
+
+    const notices =
+      await response.json();
+
+
+    noticeBox.innerHTML = "";
+
+
+    if (!notices || notices.length === 0) {
+
+      return;
+
+    }
+
+
+    notices.forEach(function(notice) {
+
+      const div =
+        document.createElement("div");
+
+      div.className =
+        "notice dynamic-notice";
+
+
+      let html =
+        "📢 <strong>" +
+        escapeNoticeText(
+          notice.title || "Notice"
+        ) +
+        ":</strong> " +
+        escapeNoticeText(
+          notice.message || ""
+        );
+
+
+      if (notice.notice_date) {
+
+        html +=
+          '<span class="notice-date">' +
+          "📅 Date: " +
+          escapeNoticeText(
+            notice.notice_date
+          ) +
+          "</span>";
+
+      }
+
+
+      if (notice.type) {
+
+        html +=
+          '<span class="notice-date">' +
+          "📌 Type: " +
+          escapeNoticeText(
+            notice.type
+          ) +
+          "</span>";
+
+      }
+
+
+      if (notice.link) {
+
+        html +=
+          '<br><a href="' +
+          escapeNoticeAttribute(
+            notice.link
+          ) +
+          '" target="_blank" rel="noopener" ' +
+          'style="color:#123b6d;font-weight:bold;">' +
+          "🔗 More Details" +
+          "</a>";
+
+      }
+
+
+      div.innerHTML =
+        html;
+
+
+      noticeBox.appendChild(div);
+
+    });
+
+
+  } catch(error) {
+
+    console.log(
+      "Dynamic notice error:",
+      error
+    );
+
+    noticeBox.innerHTML = "";
+
+  }
+
+}
+
+
+/* Security helper */
+
+function escapeNoticeText(text) {
+
+  const div =
+    document.createElement("div");
+
+  div.textContent =
+    String(text);
+
+  return div.innerHTML;
+
+}
+
+
+function escapeNoticeAttribute(text) {
+
+  return String(text)
+    .replace(/&/g,"&amp;")
+    .replace(/"/g,"&quot;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;");
+
+}
+
+
+/* Load notices */
+
+loadDynamicNotices();
+
 </script>
+
 </body>
 </html>
