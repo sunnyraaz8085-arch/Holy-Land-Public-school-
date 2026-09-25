@@ -2148,3 +2148,32 @@ document.addEventListener(
 
 </body>
 </html>
+<script>
+// Supabase se notices lekar patti me chalane ka auto code
+(async function() {
+  const SUPABASE_URL = 'https://rxrundokeksglyigbocv.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_-wkRDWu6FloTLy5xsrvvwQ_Qt3sJkfb';
+
+  try {
+    const res = await fetch(
+      SUPABASE_URL + '/rest/v1/notifications?select=title,message,active&active=eq.true',
+      {
+        headers: {
+          'apikey': SUPABASE_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_KEY
+        }
+      }
+    );
+
+    const data = await res.json();
+    const ticker = document.querySelector('.ticker');
+
+    if (ticker && data && data.length > 0) {
+      const extraText = data.map(item => '📢 ' + item.title + (item.message ? ': ' + item.message : '')).join(' • ');
+      ticker.innerHTML = ticker.innerHTML + ' • ' + extraText;
+    }
+  } catch (err) {
+    console.error('Ticker error:', err);
+  }
+})();
+</script>
